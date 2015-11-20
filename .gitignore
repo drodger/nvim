@@ -1,0 +1,5 @@
+bundle/
+.editorconfig
+.netrwhist
+viminfo
+.init.vim-rplugin~

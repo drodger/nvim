@@ -152,7 +152,6 @@ map <leader>p "+p
 vmap <leader>c "+y
 vmap <leader>p "+p
 nnoremap <leader>r :redraw!<CR>
-map <leader>sr :SyntasticReset<CR>
 nmap <leader>t :FZF<CR>
 map <leader>t :FZF<CR>
 map <leader>te :tabedit

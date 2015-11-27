@@ -97,8 +97,6 @@ NeoBundle 'loogica/vim_themes', { 'autoload':
     \ { 'unite_sources': 'colorscheme', }}
 NeoBundle 'scheakur/vim-scheakur', { 'autoload':
     \ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'erezsh/erezvim', { 'autoload':
-    \ { 'unite_sources': 'colorscheme', }}
 
 call neobundle#end()
 
@@ -137,9 +135,6 @@ let g:neomake_html_enabled_makers = ['html']
 " deoplete
 let g:deoplete#enable_at_startup = 1
 set completeopt+=noinsert
-
-" airline symbols
-" let g:airline_section_b = '%{strftime("%b %d\ %I:%M")}'
 
 " ag (silver searcher)
 let g:ag_prg="ag --nogroup --nocolor --column --vimgrep"

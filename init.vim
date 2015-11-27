@@ -89,6 +89,16 @@ NeoBundle 'fabi1cazenave/kalahari.vim', { 'autoload':
 	\ { 'unite_sources': 'colorscheme', }}
 NeoBundle 'yantze/pt_black', { 'autoload':
 	\ { 'unite_sources': 'colorscheme', }}
+NeoBundle 'mkarmona/materialbox', { 'autoload':
+    \ { 'unite_sources': 'colorscheme', }}
+NeoBundle 'vim-scripts/moria', { 'autoload':
+    \ { 'unite_sources': 'colorscheme', }}
+NeoBundle 'loogica/vim_themes', { 'autoload':
+    \ { 'unite_sources': 'colorscheme', }}
+NeoBundle 'scheakur/vim-scheakur', { 'autoload':
+    \ { 'unite_sources': 'colorscheme', }}
+NeoBundle 'erezsh/erezvim', { 'autoload':
+    \ { 'unite_sources': 'colorscheme', }}
 
 call neobundle#end()
 

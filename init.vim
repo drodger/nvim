@@ -1,3 +1,8 @@
+if (!isdirectory(expand("$HOME/.nvim/bundle/neobundle.vim")))
+    call system(expand("mkdir -p $HOME/.nvim/bundle"))
+    call system(expand("git clone https://github.com/Shougo/neobundle.vim ~/.nvim/bundle/neobundle.vim"))
+endif
+
 set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
 set rtp+=~/.fzf
 call neobundle#begin(expand('~/.config/nvim/bundle/'))
@@ -36,7 +41,6 @@ NeoBundle 'einars/js-beautify'
 NeoBundle 'elzr/vim-json'
 
 
-
 " Color schemes
 NeoBundle 'joedicastro/vim-molokai256', { 'autoload':
 	\ { 'unite_sources': 'colorscheme', }}
@@ -64,12 +68,33 @@ NeoBundle 'vim-scripts/less.vim', { 'autoload':
 	\ { 'unite_sources': 'colorscheme', }}
 NeoBundle 'DrSpatula/vim-buddy', { 'autoload':
 	\ { 'unite_sources': 'colorscheme', }}
+NeoBundle 'evgenyzinoviev/vim-vendetta', { 'autoload':
+	\ { 'unite_sources': 'colorscheme', }}
+NeoBundle 'reinecke/vim-cgpro', { 'autoload':
+	\ { 'unite_sources': 'colorscheme', }}
+NeoBundle 'rking/vim-detailed', { 'autoload':
+	\ { 'unite_sources': 'colorscheme', }}
+NeoBundle 'nielsmadan/harlequin', { 'autoload':
+	\ { 'unite_sources': 'colorscheme', }}
+NeoBundle 'vim-scripts/vibrantink', { 'autoload':
+	\ { 'unite_sources': 'colorscheme', }}
+NeoBundle 'fabi1cazenave/kalahari.vim', { 'autoload':
+	\ { 'unite_sources': 'colorscheme', }}
+NeoBundle 'yantze/pt_black', { 'autoload':
+	\ { 'unite_sources': 'colorscheme', }}
 
 call neobundle#end()
 
+" Required
+filetype plugin indent on
 NeoBundleCheck
 
-colorscheme wombat256
+colorscheme badwolf
+
+"Neovim
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+set clipboard+=unnamedplus
 
 " delimitMate
 let delimitMate_expand_cr = 1
@@ -122,7 +147,6 @@ let g:vim_json_syntax_conceal = 0
 
 
 " settings
-filetype plugin indent on
 syntax enable
 set novb
 set number
@@ -144,6 +168,12 @@ set viminfo='10,\"100,:200,%,n~/.config/nvim/viminfo
 
 " mappings
 let mapleader = "\<Space>"
+" No need for ex mode
+nnoremap Q <nop>
+" don't record macros
+map q <nop>
+" exit insert, dd line, paste, insert
+inoremap <c-d> <esc>ddpi
 map <F2> :set invpaste paste?<CR>
 map <F3> :nohlsearch<CR>
 map <F7> :FixWhitespace<CR>

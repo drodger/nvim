@@ -171,6 +171,7 @@ set nobackup
 set undofile
 set undoreload=1000
 set viminfo='10,\"100,:200,%,n~/.config/nvim/viminfo
+set fillchars+=vert:│              " better looking window separator
 
 
 " mappings

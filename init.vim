@@ -18,14 +18,19 @@ NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-easytags'
+NeoBundle 'valloric/matchtagalways'
+NeoBundle 'mattn/emmet-vim'
 " Async
 NeoBundle 'benekastah/neomake'
 " Navigate
 NeoBundle 'christoomey/vim-tmux-navigator'
 " Status lines/info
+NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'manicmaniac/betterga'	" show details of character under cursor
+NeoBundle 'gorodinskiy/vim-coloresque' " preview colors
+NeoBundle 'ryanoasis/vim-devicons'
 " Find stuff
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'junegunn/fzf'
@@ -39,6 +44,8 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'einars/js-beautify'
 NeoBundle 'elzr/vim-json'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle '1995eaton/vim-better-javascript-completion'
 
 
 " Color schemes
@@ -149,7 +156,7 @@ let g:vim_json_syntax_conceal = 0
 " settings
 syntax enable
 set novb
-set number
+set relativenumber number
 set autochdir
 set laststatus=2
 set cursorline
@@ -228,19 +235,22 @@ let g:lightline = {
 	\ 'colorscheme': 'wombat',
 	\ 'active': {
 	\	'left': [ [ 'mode', 'paste', 'ctrlpmark' ],
-	\			  [ 'readonly', 'filename' ] ],
+	\			  [ 'fugitive', 'readonly', 'filename' ] ],
 	\	'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
 	\ },
 	\ 'component': {
 	\	'readonly': '%{&readonly?"":""}',
 	\	'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+    \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
 	\ },
 	\ 'component_function': {
+    \   'mode': 'LightLineMode',
 	\   'filename': 'LightLineFilename',
 	\   'fileformat': 'LightLineFileformat',
 	\   'filetype': 'LightLineFiletype',
 	\   'fileencoding': 'LightLineFileencoding',
 	\   'ctrlpmark': 'CtrlPMark',
+    \   'fugitive': 'LightLineFugitive'
 	\ },
 	\ 'component_expand': {
 	\   'syntastic': 'SyntasticStatuslineFlag',
@@ -280,6 +290,12 @@ function! LightLineFileencoding()
   return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
 endfunction
 
+function! LightLineMode()
+    let fname = expand('%:t')
+    return fname == 'ControlP' ? 'CtrlP' :
+        \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
 function! CtrlPMark()
   if expand('%:t') =~ 'ControlP'
     call lightline#link('iR'[g:lightline.ctrlp_regex])
@@ -307,3 +323,10 @@ function! CtrlPStatusFunc_2(str)
   return lightline#statusline(0)
 endfunction
 
+function! LightLineFugitive()
+    if exists("*fugitive#head")
+        let _ = fugitive#head()
+        return strlen(_) ? ' ' ._ : ''
+    endif
+    return ''
+endfunction

@@ -236,12 +236,12 @@ let g:lightline = {
 	\ 'active': {
 	\	'left': [ [ 'mode', 'paste', 'ctrlpmark' ],
 	\			  [ 'fugitive', 'readonly', 'filename' ] ],
-	\	'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+	\	'right': [ ['datetime'], [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
 	\ },
 	\ 'component': {
 	\	'readonly': '%{&readonly?"":""}',
 	\	'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-    \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+    \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
 	\ },
 	\ 'component_function': {
     \   'mode': 'LightLineMode',
@@ -250,7 +250,8 @@ let g:lightline = {
 	\   'filetype': 'LightLineFiletype',
 	\   'fileencoding': 'LightLineFileencoding',
 	\   'ctrlpmark': 'CtrlPMark',
-    \   'fugitive': 'LightLineFugitive'
+    \   'fugitive': 'LightLineFugitive',
+    \   'datetime': 'LightLineDateTime'
 	\ },
 	\ 'component_expand': {
 	\   'syntastic': 'SyntasticStatuslineFlag',
@@ -261,6 +262,10 @@ let g:lightline = {
 	\ 'separator': { 'left': '', 'right': '' },
 	\ 'subseparator': { 'left': '', 'right': '' }
 	\ }
+
+function! LightLineDateTime()
+    return strftime("%b %d\ %I:%M")
+endfunction
 
 function! LightLineModified()
   return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'

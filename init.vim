@@ -46,6 +46,7 @@ NeoBundle 'einars/js-beautify'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle '1995eaton/vim-better-javascript-completion'
+NeoBundle 'klen/python-mode'
 
 
 " Color schemes

@@ -1,6 +1,6 @@
-if (!isdirectory(expand("$HOME/.nvim/bundle/neobundle.vim")))
-    call system(expand("mkdir -p $HOME/.nvim/bundle"))
-    call system(expand("git clone https://github.com/Shougo/neobundle.vim ~/.nvim/bundle/neobundle.vim"))
+if (!isdirectory(expand("$HOME/.config/nvim/bundle/neobundle.vim")))
+    call system(expand("mkdir -p $HOME/.config/nvim/bundle"))
+    call system(expand("git clone https://github.com/Shougo/neobundle.vim ~/.config/nvim/bundle/neobundle.vim"))
 endif
 
 set runtimepath+=~/.config/nvim/bundle/neobundle.vim/

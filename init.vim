@@ -1,13 +1,15 @@
 if (!isdirectory(expand("$HOME/.config/nvim/bundle/neobundle.vim")))
     call system(expand("mkdir -p $HOME/.config/nvim/bundle"))
-    call system(expand("git clone https://github.com/Shougo/neobundle.vim ~/.config/nvim/bundle/neobundle.vim"))
+    call system(expand("git clone https://github.com/Shougo/neobundle.vim $HOME/.config/nvim/bundle/neobundle.vim"))
 endif
 
-set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
+set runtimepath+=$HOME/.config/nvim/bundle/neobundle.vim/
 set rtp+=~/.fzf
-call neobundle#begin(expand('~/.config/nvim/bundle/'))
+call neobundle#begin(expand('$HOME/.config/nvim/bundle/'))
 
-NeoBundleFetch 'Shuogo/neobundle.vim'
+if has("unix")
+    NeoBundleFetch 'Shuogo/neobundle.vim'
+endif
 
 " Bundles
 NeoBundle 'Raimondi/delimitMate'
@@ -27,7 +29,12 @@ NeoBundle 'christoomey/vim-tmux-navigator'
 " Status lines/info
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'mhinz/vim-signify'
-NeoBundle 'itchyny/lightline.vim'
+if has("macunix")
+    NeoBundle 'bling/vim-airline'
+else
+    NeoBundle 'itchyny/lightline.vim'
+endif
+
 NeoBundle 'manicmaniac/betterga'	" show details of character under cursor
 NeoBundle 'gorodinskiy/vim-coloresque' " preview colors
 NeoBundle 'ryanoasis/vim-devicons'
@@ -42,7 +49,6 @@ NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'maksimr/vim-jsbeautify'
-NeoBundle 'einars/js-beautify'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle '1995eaton/vim-better-javascript-completion'
@@ -98,7 +104,6 @@ NeoBundle 'loogica/vim_themes', { 'autoload':
     \ { 'unite_sources': 'colorscheme', }}
 NeoBundle 'scheakur/vim-scheakur', { 'autoload':
     \ { 'unite_sources': 'colorscheme', }}
-
 call neobundle#end()
 
 " Required
@@ -111,6 +116,7 @@ colorscheme badwolf
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set clipboard+=unnamedplus
+let g:python_host_prog='/usr/local/bin/python3'
 
 " delimitMate
 let delimitMate_expand_cr = 1
@@ -153,7 +159,11 @@ let g:badwolf_css_props_highlight = 1
 let g:used_javascript_libs = 'jquery'
 
 " javascript beautifier
-let g:editorconfig_Beautifier = '/home/derek/.config/nvim/.editorconfig'
+if has("macunix")
+    let g:editorconfig_Beautifier = '/Users/derek/.config/nvim/.editorconfig'
+else
+    let g:editorconfig_Beautifier = '$HOME/.config/nvim/.editorconfig'
+endif
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
@@ -236,6 +246,12 @@ augroup vimrc_help
 	autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
 augroup END
 
+" Airline
+if has("macunix")
+    let g:airline_left_sep = '▶'
+    let g:airline_right_sep = '◀'
+    let g:airline_section_b = '%{strftime("%b %d\ %I:%M")}' 
+endif
 
 " lightline
 let g:lightline = {

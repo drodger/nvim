@@ -162,11 +162,18 @@ let g:used_javascript_libs = 'jquery'
 if has("macunix")
     let g:editorconfig_Beautifier = '/Users/derek/.config/nvim/.editorconfig'
 else
-    let g:editorconfig_Beautifier = '$HOME/.config/nvim/.editorconfig'
+    let g:editorconfig_Beautifier = '/home/derek/.config/nvim/.editorconfig'
 endif
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
+
+" pymode
+let g:pymode_folding = 0
+let g:pymode_doc = 0
+let g:pymode_virtualenv = 1
+let g:pymode_rope = 0
+
 
 
 " settings
@@ -206,6 +213,7 @@ map <leader>p "+p
 vmap <leader>c "+y
 vmap <leader>p "+p
 nnoremap <leader>r :redraw!<CR>
+nmap <leader>l :lclose<CR>
 nmap <leader>t :FZF<CR>
 map <leader>t :FZF<CR>
 map <leader>te :tabedit

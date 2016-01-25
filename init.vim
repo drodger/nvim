@@ -53,6 +53,8 @@ NeoBundle 'christoomey/vim-tmux-navigator'
 " Status lines/info
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'mhinz/vim-signify'
+NeoBundle 'junegunn/gv.vim'
+
 if has("macunix")
     NeoBundle 'bling/vim-airline'
 else
@@ -134,7 +136,7 @@ call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
 
-colorscheme buddy
+colorscheme badwolf
 
 "Neovim
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1

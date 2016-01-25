@@ -5,10 +5,34 @@ endif
 
 set runtimepath+=$HOME/.config/nvim/bundle/neobundle.vim/
 set rtp+=~/.fzf
+set rtp+=$HOME/.config/nvim/bundle/vim-molokai256/
+set rtp+=$HOME/.config/nvim/bundle/molokai_dark/
+set rtp+=$HOME/.config/nvim/bundle/vim-wombat/
+set rtp+=$HOME/.config/nvim/bundle/vim-colors-solarized/
+set rtp+=$HOME/.config/nvim/bundle/vim-distinguished/
+set rtp+=$HOME/.config/nvim/bundle/mayansmoke/
+set rtp+=$HOME/.config/nvim/bundle/badwolf/
+set rtp+=$HOME/.config/nvim/bundle/herald.vim/
+set rtp+=$HOME/.config/nvim/bundle/moria/
+set rtp+=$HOME/.config/nvim/bundle/Spacegray.vim/
+set rtp+=$HOME/.config/nvim/bundle/twilight256.vim/
+set rtp+=$HOME/.config/nvim/bundle/less.vim/
+set rtp+=$HOME/.config/nvim/bundle/vim-buddy/
+set rtp+=$HOME/.config/nvim/bundle/vim-vendetta/
+set rtp+=$HOME/.config/nvim/bundle/vim-cgpro/
+set rtp+=$HOME/.config/nvim/bundle/vim-detailed/
+set rtp+=$HOME/.config/nvim/bundle/harlequin/
+set rtp+=$HOME/.config/nvim/bundle/vibrantink/
+set rtp+=$HOME/.config/nvim/bundle/kalahari.vim/
+set rtp+=$HOME/.config/nvim/bundle/pt_black/
+set rtp+=$HOME/.config/nvim/bundle/materialbox/
+set rtp+=$HOME/.config/nvim/bundle/moria/
+set rtp+=$HOME/.config/nvim/bundle/vim_themes/
+set rtp+=$HOME/.config/nvim/bundle/vim-scheakur/
 call neobundle#begin(expand('$HOME/.config/nvim/bundle/'))
 
 if has("unix")
-    NeoBundleFetch 'Shuogo/neobundle.vim'
+    NeoBundleFetch 'Shougo/neobundle.vim'
 endif
 
 " Bundles
@@ -110,7 +134,7 @@ call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
 
-colorscheme badwolf
+colorscheme buddy
 
 "Neovim
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1

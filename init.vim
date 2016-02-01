@@ -79,7 +79,9 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle '1995eaton/vim-better-javascript-completion'
 NeoBundle 'klen/python-mode'
-
+" Nyaovim
+" NeoBundle 'rhysd/nyaovim-markdown-preview'
+" NeoBundle 'rhysd/nyaovim-popup-tooltip'
 
 " Color schemes
 NeoBundle 'joedicastro/vim-molokai256', { 'autoload':

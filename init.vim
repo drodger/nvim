@@ -46,6 +46,7 @@ NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-easytags'
 NeoBundle 'valloric/matchtagalways'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'Shougo/unite.vim'
 " Async
 NeoBundle 'benekastah/neomake'
 " Navigate
@@ -84,54 +85,54 @@ NeoBundle 'klen/python-mode'
 " NeoBundle 'rhysd/nyaovim-popup-tooltip'
 
 " Color schemes
-NeoBundle 'joedicastro/vim-molokai256', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'fcevado/molokai_dark', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'cschlueter/vim-wombat', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'altercation/vim-colors-solarized', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'Lokaltog/vim-distinguished', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'vim-scripts/mayansmoke', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'sjl/badwolf', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'vim-scripts/herald.vim', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'vim-scripts/moria', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'vim-scripts/Spacegray.vim', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'vim-scripts/twilight256.vim', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'vim-scripts/less.vim', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'DrSpatula/vim-buddy', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'evgenyzinoviev/vim-vendetta', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'reinecke/vim-cgpro', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'rking/vim-detailed', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'nielsmadan/harlequin', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'vim-scripts/vibrantink', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'fabi1cazenave/kalahari.vim', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'yantze/pt_black', { 'autoload':
-	\ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'mkarmona/materialbox', { 'autoload':
-    \ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'vim-scripts/moria', { 'autoload':
-    \ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'loogica/vim_themes', { 'autoload':
-    \ { 'unite_sources': 'colorscheme', }}
-NeoBundle 'scheakur/vim-scheakur', { 'autoload':
-    \ { 'unite_sources': 'colorscheme', }}
+NeoBundleLazy 'joedicastro/vim-molokai256', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'fcevado/molokai_dark', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'cschlueter/vim-wombat', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'altercation/vim-colors-solarized', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'Lokaltog/vim-distinguished', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'vim-scripts/mayansmoke', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'sjl/badwolf', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'vim-scripts/herald.vim', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'vim-scripts/moria', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'vim-scripts/Spacegray.vim', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'vim-scripts/twilight256.vim', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'vim-scripts/less.vim', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'DrSpatula/vim-buddy', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'evgenyzinoviev/vim-vendetta', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'reinecke/vim-cgpro', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'rking/vim-detailed', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'nielsmadan/harlequin', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'vim-scripts/vibrantink', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'fabi1cazenave/kalahari.vim', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'yantze/pt_black', { 'autoload':
+	\ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'mkarmona/materialbox', { 'autoload':
+    \ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'vim-scripts/moria', { 'autoload':
+    \ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'loogica/vim_themes', { 'autoload':
+    \ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'scheakur/vim-scheakur', { 'autoload':
+    \ { 'on_source': 'colorscheme', }}
 call neobundle#end()
 
 " Required

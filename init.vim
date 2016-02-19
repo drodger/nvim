@@ -5,31 +5,6 @@ endif
 
 set runtimepath+=$HOME/.config/nvim/bundle/neobundle.vim/
 set rtp+=~/.fzf
-set rtp+=$HOME/.config/nvim/bundle/vim-molokai256/
-set rtp+=$HOME/.config/nvim/bundle/molokai_dark/
-set rtp+=$HOME/.config/nvim/bundle/vim-wombat/
-set rtp+=$HOME/.config/nvim/bundle/vim-colors-solarized/
-set rtp+=$HOME/.config/nvim/bundle/vim-distinguished/
-set rtp+=$HOME/.config/nvim/bundle/mayansmoke/
-set rtp+=$HOME/.config/nvim/bundle/badwolf/
-set rtp+=$HOME/.config/nvim/bundle/herald.vim/
-set rtp+=$HOME/.config/nvim/bundle/moria/
-set rtp+=$HOME/.config/nvim/bundle/Spacegray.vim/
-set rtp+=$HOME/.config/nvim/bundle/twilight256.vim/
-set rtp+=$HOME/.config/nvim/bundle/less.vim/
-set rtp+=$HOME/.config/nvim/bundle/vim-buddy/
-set rtp+=$HOME/.config/nvim/bundle/vim-vendetta/
-set rtp+=$HOME/.config/nvim/bundle/vim-cgpro/
-set rtp+=$HOME/.config/nvim/bundle/vim-detailed/
-set rtp+=$HOME/.config/nvim/bundle/harlequin/
-set rtp+=$HOME/.config/nvim/bundle/vibrantink/
-set rtp+=$HOME/.config/nvim/bundle/kalahari.vim/
-set rtp+=$HOME/.config/nvim/bundle/pt_black/
-set rtp+=$HOME/.config/nvim/bundle/materialbox/
-set rtp+=$HOME/.config/nvim/bundle/moria/
-set rtp+=$HOME/.config/nvim/bundle/vim_themes/
-set rtp+=$HOME/.config/nvim/bundle/vim-scheakur/
-set rtp+=$HOME/.config/nvim/bundle/Alduin/
 call neobundle#begin(expand('$HOME/.config/nvim/bundle/'))
 
 if has("unix")
@@ -82,62 +57,38 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle '1995eaton/vim-better-javascript-completion'
 NeoBundle 'klen/python-mode'
 NeoBundle 'mxw/vim-jsx'
-"
+
 " Nyaovim
 " NeoBundle 'rhysd/nyaovim-markdown-preview'
 " NeoBundle 'rhysd/nyaovim-popup-tooltip'
 
 " Color schemes
-NeoBundleLazy 'joedicastro/vim-molokai256', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'fcevado/molokai_dark', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'cschlueter/vim-wombat', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'altercation/vim-colors-solarized', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'Lokaltog/vim-distinguished', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'vim-scripts/mayansmoke', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'sjl/badwolf', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'vim-scripts/herald.vim', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'vim-scripts/moria', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'vim-scripts/Spacegray.vim', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'vim-scripts/twilight256.vim', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'vim-scripts/less.vim', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'DrSpatula/vim-buddy', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'evgenyzinoviev/vim-vendetta', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'reinecke/vim-cgpro', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'rking/vim-detailed', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'nielsmadan/harlequin', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'vim-scripts/vibrantink', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'fabi1cazenave/kalahari.vim', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'yantze/pt_black', { 'autoload':
-	\ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'mkarmona/materialbox', { 'autoload':
-    \ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'vim-scripts/moria', { 'autoload':
-    \ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'loogica/vim_themes', { 'autoload':
-    \ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'scheakur/vim-scheakur', { 'autoload':
-    \ { 'on_source': 'colorscheme', }}
-NeoBundleLazy 'AlessandroYorba/Alduin', { 'autoload':
-    \ { 'on_source': 'colorscheme', }}
+NeoBundle 'trusktr/seti.vim'
+NeoBundle 'sjl/badwolf'
+NeoBundle 'joedicastro/vim-molokai256'
+NeoBundle 'fcevado/molokai_dark'
+NeoBundle 'cschlueter/vim-wombat'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'Lokaltog/vim-distinguished'
+NeoBundle 'vim-scripts/mayansmoke'
+NeoBundle 'vim-scripts/herald.vim'
+NeoBundle 'vim-scripts/moria'
+NeoBundle 'vim-scripts/Spacegray.vim'
+NeoBundle 'vim-scripts/twilight256.vim'
+NeoBundle 'vim-scripts/less.vim'
+NeoBundle 'DrSpatula/vim-buddy'
+NeoBundle 'evgenyzinoviev/vim-vendetta'
+NeoBundle 'reinecke/vim-cgpro'
+NeoBundle 'rking/vim-detailed'
+NeoBundle 'nielsmadan/harlequin'
+NeoBundle 'vim-scripts/vibrantink'
+NeoBundle 'fabi1cazenave/kalahari.vim'
+NeoBundle 'yantze/pt_black'
+NeoBundle 'mkarmona/materialbox'
+NeoBundle 'vim-scripts/moria'
+NeoBundle 'loogica/vim_themes'
+NeoBundle 'scheakur/vim-scheakur'
+NeoBundle 'AlessandroYorba/Alduin'
 call neobundle#end()
 
 " Required

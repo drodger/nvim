@@ -29,6 +29,7 @@ set rtp+=$HOME/.config/nvim/bundle/materialbox/
 set rtp+=$HOME/.config/nvim/bundle/moria/
 set rtp+=$HOME/.config/nvim/bundle/vim_themes/
 set rtp+=$HOME/.config/nvim/bundle/vim-scheakur/
+set rtp+=$HOME/.config/nvim/bundle/Alduin/
 call neobundle#begin(expand('$HOME/.config/nvim/bundle/'))
 
 if has("unix")
@@ -80,6 +81,8 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle '1995eaton/vim-better-javascript-completion'
 NeoBundle 'klen/python-mode'
+NeoBundle 'mxw/vim-jsx'
+"
 " Nyaovim
 " NeoBundle 'rhysd/nyaovim-markdown-preview'
 " NeoBundle 'rhysd/nyaovim-popup-tooltip'
@@ -133,6 +136,8 @@ NeoBundleLazy 'loogica/vim_themes', { 'autoload':
     \ { 'on_source': 'colorscheme', }}
 NeoBundleLazy 'scheakur/vim-scheakur', { 'autoload':
     \ { 'on_source': 'colorscheme', }}
+NeoBundleLazy 'AlessandroYorba/Alduin', { 'autoload':
+    \ { 'on_source': 'colorscheme', }}
 call neobundle#end()
 
 " Required
@@ -163,10 +168,18 @@ augroup END
 " neomake
 let g:neomake_list_height = 5
 let g:neomake_open_list = 2
+let g:neomake_logfile='/tmp/neomake_error.log'
 let g:neomake_python_enabled_makers = ['flake8']
-let g:neomake_javascript_enabled_makers = ['jshint']
+" let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_php_enabled_makers = ['php']
 let g:neomake_html_enabled_makers = ['html']
+let g:neomake_javascript_jscs_maker = {
+    \ 'exe': 'jscs',
+    \ 'args': ['--nocolor', '--preset', 'airbnb', '--reporter', 'inline', '--esnext'],
+    \ 'errorformat': '%f: line %l\, col %c\, %m',
+    \ }
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 " deoplete
 let g:deoplete#enable_at_startup = 1

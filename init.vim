@@ -1,99 +1,97 @@
-if (!isdirectory(expand("$HOME/.config/nvim/bundle/neobundle.vim")))
-    call system(expand("mkdir -p $HOME/.config/nvim/bundle"))
-    call system(expand("git clone https://github.com/Shougo/neobundle.vim $HOME/.config/nvim/bundle/neobundle.vim"))
-endif
-
-set runtimepath+=$HOME/.config/nvim/bundle/neobundle.vim/
+set runtimepath+=$HOME/.config/nvim/repos/github.com/Shougo/dein.vim
 set rtp+=~/.fzf
-call neobundle#begin(expand('$HOME/.config/nvim/bundle/'))
 
-if has("unix")
-    NeoBundleFetch 'Shougo/neobundle.vim'
-endif
+call dein#begin(expand('~/.cache/dein'))
 
-" Bundles
-NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'coderifous/textobj-word-column.vim'	" operate on columns of code
-NeoBundle 'junegunn/vim-easy-align'
-NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'xolox/vim-misc'
-NeoBundle 'xolox/vim-easytags'
-NeoBundle 'valloric/matchtagalways'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'Shougo/unite.vim'
+call dein#add('Shougo/dein.vim')
+
+" plugins
+call dein#add('Raimondi/delimitMate')
+call dein#add('tpope/vim-commentary')
+
+call dein#add('tpope/vim-surround')
+call dein#add('coderifous/textobj-word-column.vim')	" operate on columns of code
+call dein#add('junegunn/vim-easy-align')
+call dein#add('bronson/vim-trailing-whitespace')
+call dein#add('xolox/vim-misc')
+call dein#add('xolox/vim-easytags')
+call dein#add('valloric/matchtagalways')
+call dein#add('mattn/emmet-vim')
+call dein#add('Shougo/unite.vim')
 " Async
-NeoBundle 'benekastah/neomake'
+call dein#add('benekastah/neomake')
 " Navigate
-NeoBundle 'christoomey/vim-tmux-navigator'
+call dein#add('christoomey/vim-tmux-navigator')
 " Status lines/info
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'mhinz/vim-signify'
-NeoBundle 'junegunn/gv.vim'
+call dein#add('tpope/vim-fugitive')
+call dein#add('mhinz/vim-signify')
+call dein#add('junegunn/gv.vim')
 
 if has("macunix")
-    NeoBundle 'bling/vim-airline'
+    call dein#add('bling/vim-airline')
 else
-    NeoBundle 'itchyny/lightline.vim'
+    call dein#add('itchyny/lightline.vim')
 endif
 
-NeoBundle 'manicmaniac/betterga'	" show details of character under cursor
-NeoBundle 'gorodinskiy/vim-coloresque' " preview colors
-NeoBundle 'ryanoasis/vim-devicons'
+call dein#add('manicmaniac/betterga')	" show details of character under cursor
+call dein#add('gorodinskiy/vim-coloresque') " preview colors
+call dein#add('ryanoasis/vim-devicons')
 " Find stuff
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'junegunn/fzf'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'Shougo/deoplete.nvim'
+call dein#add('ctrlpvim/ctrlp.vim')
+call dein#add('junegunn/fzf')
+call dein#add('rking/ag.vim')
+call dein#add('Shougo/deoplete.nvim')
 " Syntax
-NeoBundle 'pearofducks/ansible-vim'
-NeoBundle 'othree/javascript-libraries-syntax.vim'
-NeoBundle 'othree/yajs.vim'
-NeoBundle 'othree/html5.vim'
-NeoBundle 'maksimr/vim-jsbeautify'
-NeoBundle 'elzr/vim-json'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle '1995eaton/vim-better-javascript-completion'
-NeoBundle 'klen/python-mode'
-NeoBundle 'mxw/vim-jsx'
+call dein#add('pearofducks/ansible-vim')
+call dein#add('othree/javascript-libraries-syntax.vim')
+call dein#add('othree/yajs.vim')
+call dein#add('othree/html5.vim')
+call dein#add('maksimr/vim-jsbeautify')
+call dein#add('elzr/vim-json')
+call dein#add('hail2u/vim-css3-syntax')
+call dein#add('1995eaton/vim-better-javascript-completion')
+call dein#add('klen/python-mode')
+call dein#add('mxw/vim-jsx')
 
 " Nyaovim
-" NeoBundle 'rhysd/nyaovim-markdown-preview'
-" NeoBundle 'rhysd/nyaovim-popup-tooltip'
+" call dein#add('rhysd/nyaovim-markdown-preview')
+" call dein#add('rhysd/nyaovim-popup-tooltip')
 
 " Color schemes
-NeoBundle 'trusktr/seti.vim'
-NeoBundle 'sjl/badwolf'
-NeoBundle 'joedicastro/vim-molokai256'
-NeoBundle 'fcevado/molokai_dark'
-NeoBundle 'cschlueter/vim-wombat'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'Lokaltog/vim-distinguished'
-NeoBundle 'vim-scripts/mayansmoke'
-NeoBundle 'vim-scripts/herald.vim'
-NeoBundle 'vim-scripts/moria'
-NeoBundle 'vim-scripts/Spacegray.vim'
-NeoBundle 'vim-scripts/twilight256.vim'
-NeoBundle 'vim-scripts/less.vim'
-NeoBundle 'DrSpatula/vim-buddy'
-NeoBundle 'evgenyzinoviev/vim-vendetta'
-NeoBundle 'reinecke/vim-cgpro'
-NeoBundle 'rking/vim-detailed'
-NeoBundle 'nielsmadan/harlequin'
-NeoBundle 'vim-scripts/vibrantink'
-NeoBundle 'fabi1cazenave/kalahari.vim'
-NeoBundle 'yantze/pt_black'
-NeoBundle 'mkarmona/materialbox'
-NeoBundle 'vim-scripts/moria'
-NeoBundle 'loogica/vim_themes'
-NeoBundle 'scheakur/vim-scheakur'
-NeoBundle 'AlessandroYorba/Alduin'
-call neobundle#end()
+call dein#add('trusktr/seti.vim')
+call dein#add('sjl/badwolf')
+call dein#add('joedicastro/vim-molokai256')
+call dein#add('fcevado/molokai_dark')
+call dein#add('cschlueter/vim-wombat')
+call dein#add('altercation/vim-colors-solarized')
+call dein#add('Lokaltog/vim-distinguished')
+call dein#add('vim-scripts/mayansmoke')
+call dein#add('vim-scripts/herald.vim')
+call dein#add('vim-scripts/moria')
+call dein#add('vim-scripts/Spacegray.vim')
+call dein#add('vim-scripts/twilight256.vim')
+call dein#add('vim-scripts/less.vim')
+call dein#add('DrSpatula/vim-buddy')
+call dein#add('evgenyzinoviev/vim-vendetta')
+call dein#add('reinecke/vim-cgpro')
+call dein#add('rking/vim-detailed')
+call dein#add('nielsmadan/harlequin')
+call dein#add('vim-scripts/vibrantink')
+call dein#add('fabi1cazenave/kalahari.vim')
+call dein#add('yantze/pt_black')
+call dein#add('mkarmona/materialbox')
+call dein#add('vim-scripts/moria')
+call dein#add('loogica/vim_themes')
+call dein#add('scheakur/vim-scheakur')
+call dein#add('AlessandroYorba/Alduin')
 
-" Required
+call dein#end()
+
 filetype plugin indent on
-NeoBundleCheck
+
+if dein#check_install()
+    call dein#check_install()
+endif
 
 colorscheme badwolf
 
@@ -102,6 +100,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set clipboard+=unnamedplus
 let g:python_host_prog='/usr/local/bin/python3'
+
 
 " delimitMate
 let delimitMate_expand_cr = 1

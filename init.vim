@@ -26,6 +26,8 @@ call dein#add('christoomey/vim-tmux-navigator')
 call dein#add('tpope/vim-fugitive')
 call dein#add('mhinz/vim-signify')
 call dein#add('junegunn/gv.vim')
+call dein#add('manicmaniac/betterga')	" show details of character under cursor
+call dein#add('gorodinskiy/vim-coloresque') " preview colors
 
 if has("macunix")
     call dein#add('bling/vim-airline')
@@ -33,9 +35,6 @@ else
     call dein#add('itchyny/lightline.vim')
 endif
 
-call dein#add('manicmaniac/betterga')	" show details of character under cursor
-call dein#add('gorodinskiy/vim-coloresque') " preview colors
-call dein#add('ryanoasis/vim-devicons')
 " Find stuff
 call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('junegunn/fzf')
@@ -53,6 +52,7 @@ call dein#add('1995eaton/vim-better-javascript-completion')
 call dein#add('klen/python-mode')
 call dein#add('mxw/vim-jsx')
 
+call dein#add('ryanoasis/vim-devicons')
 " Nyaovim
 " call dein#add('rhysd/nyaovim-markdown-preview')
 " call dein#add('rhysd/nyaovim-popup-tooltip')
@@ -99,7 +99,7 @@ colorscheme badwolf
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set clipboard+=unnamedplus
-let g:python_host_prog='/usr/local/bin/python3'
+let g:python_host_prog='/usr/bin/python3'
 
 
 " delimitMate
@@ -311,11 +311,11 @@ function! LightLineFileformat()
 endfunction
 
 function! LightLineFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol(): 'no ft') : ''
 endfunction
 
 function! LightLineFileencoding()
-  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc . ' ' . WebDevIconsGetFileFormatSymbol() : &enc) : ''
 endfunction
 
 function! LightLineMode()

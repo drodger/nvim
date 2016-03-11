@@ -1,4 +1,5 @@
 bundle/
+repos/
 .editorconfig
 .netrwhist
 viminfo

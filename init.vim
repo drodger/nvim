@@ -13,8 +13,8 @@ call dein#add('tpope/vim-surround')
 call dein#add('coderifous/textobj-word-column.vim')	" operate on columns of code
 call dein#add('junegunn/vim-easy-align')
 call dein#add('bronson/vim-trailing-whitespace')
-call dein#add('xolox/vim-misc')
-call dein#add('xolox/vim-easytags')
+" call dein#add('xolox/vim-misc')
+" call dein#add('xolox/vim-easytags')
 call dein#add('valloric/matchtagalways')
 call dein#add('mattn/emmet-vim')
 call dein#add('Shougo/unite.vim')
@@ -51,6 +51,7 @@ call dein#add('hail2u/vim-css3-syntax')
 call dein#add('1995eaton/vim-better-javascript-completion')
 call dein#add('klen/python-mode')
 call dein#add('mxw/vim-jsx')
+call dein#add('vim-scripts/VimClojure')
 
 call dein#add('ryanoasis/vim-devicons')
 " Nyaovim
@@ -92,6 +93,8 @@ filetype plugin indent on
 if dein#check_install()
     call dein#check_install()
 endif
+
+" call dein#update()
 
 colorscheme badwolf
 

@@ -13,8 +13,6 @@ call dein#add('tpope/vim-surround')
 call dein#add('coderifous/textobj-word-column.vim')	" operate on columns of code
 call dein#add('junegunn/vim-easy-align')
 call dein#add('bronson/vim-trailing-whitespace')
-" call dein#add('xolox/vim-misc')
-" call dein#add('xolox/vim-easytags')
 call dein#add('valloric/matchtagalways')
 call dein#add('mattn/emmet-vim')
 call dein#add('Shougo/unite.vim')

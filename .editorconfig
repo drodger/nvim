@@ -3,7 +3,7 @@
 root = true
 
 [**.js]
-path=~/.config/nvim/bundle/js-beautify/js/lib/beautify.js
+path=~/.cache/dein/.dein/plugin/lib/js/lib/beautify.js
 bin=node
 indent_style = space
 indent_size = 4
@@ -15,13 +15,13 @@ indent_style = space
 indent_size = 4
 
 [**.css]
-path=~/.config/nvim/bundle/js-beautify/js/lib/beautify-css.js
+path=~/.cache/dein/.dein/plugin/lib/js/lib/beautify-css.js
 indent_style = space
 indent_size = 4
 brace_style = collapse
 
 [**.html]
-path=~/.config/nvim/bundle/js-beautify/js/lib/beautify-html.js
+path=~/.cache/dein/.dein/plugin/lib/js/lib/beautify-html.js
 indent_style = space
 indent_size = 4
 max_char = 78

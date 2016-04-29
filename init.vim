@@ -14,12 +14,8 @@ call dein#add('coderifous/textobj-word-column.vim')	" operate on columns of code
 call dein#add('junegunn/vim-easy-align')
 call dein#add('bronson/vim-trailing-whitespace')
 call dein#add('valloric/matchtagalways')
-call dein#add('mattn/emmet-vim')
-call dein#add('Shougo/unite.vim')
 " Async
 call dein#add('benekastah/neomake')
-" Navigate
-call dein#add('christoomey/vim-tmux-navigator')
 " Status lines/info
 call dein#add('tpope/vim-fugitive')
 call dein#add('mhinz/vim-signify')
@@ -50,14 +46,11 @@ call dein#add('1995eaton/vim-better-javascript-completion')
 call dein#add('klen/python-mode')
 call dein#add('mxw/vim-jsx')
 call dein#add('vim-scripts/VimClojure')
-
 call dein#add('ryanoasis/vim-devicons')
-" Nyaovim
-" call dein#add('rhysd/nyaovim-markdown-preview')
-" call dein#add('rhysd/nyaovim-popup-tooltip')
 
 " Color schemes
 call dein#add('trusktr/seti.vim')
+call dein#add('romainl/flattened')
 call dein#add('sjl/badwolf')
 call dein#add('joedicastro/vim-molokai256')
 call dein#add('fcevado/molokai_dark')
@@ -167,6 +160,9 @@ let g:pymode_doc = 0
 let g:pymode_virtualenv = 1
 let g:pymode_rope = 0
 
+" webdevicons
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_ctrlp = 1
 
 
 " settings

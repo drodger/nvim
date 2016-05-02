@@ -29,6 +29,9 @@ else
     call dein#add('itchyny/lightline.vim')
 endif
 
+" Navigate
+call dein#add('christoomey/vim-tmux-navigator')
+
 " Find stuff
 call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('junegunn/fzf')

@@ -39,7 +39,6 @@ call dein#add('rking/ag.vim')
 call dein#add('Shougo/deoplete.nvim')
 " Syntax
 call dein#add('pearofducks/ansible-vim')
-call dein#add('othree/javascript-libraries-syntax.vim')
 call dein#add('othree/yajs.vim')
 call dein#add('othree/html5.vim')
 call dein#add('maksimr/vim-jsbeautify')
@@ -48,6 +47,8 @@ call dein#add('hail2u/vim-css3-syntax')
 call dein#add('1995eaton/vim-better-javascript-completion')
 call dein#add('klen/python-mode')
 call dein#add('mxw/vim-jsx')
+call dein#add('pangloss/vim-javascript')
+call dein#add('othree/javascript-libraries-syntax.vim')
 call dein#add('vim-scripts/VimClojure')
 call dein#add('ryanoasis/vim-devicons')
 
@@ -92,8 +93,12 @@ endif
 
 colorscheme badwolf
 
+" Tmux truecolor
+if has("termguicolors")
+    set termguicolors
+endif
+
 "Neovim
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set clipboard+=unnamedplus
 let g:python_host_prog='/usr/bin/python3'
@@ -117,16 +122,17 @@ let g:neomake_list_height = 5
 let g:neomake_open_list = 2
 let g:neomake_logfile='/tmp/neomake_error.log'
 let g:neomake_python_enabled_makers = ['flake8']
-" let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_php_enabled_makers = ['php']
 let g:neomake_html_enabled_makers = ['html']
-let g:neomake_javascript_jscs_maker = {
-    \ 'exe': 'jscs',
-    \ 'args': ['--nocolor', '--preset', 'airbnb', '--reporter', 'inline', '--esnext'],
-    \ 'errorformat': '%f: line %l\, col %c\, %m',
-    \ }
-let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_logfile = '/home/derek/tmp/neomake.log'
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+" let g:neomake_javascript_jscs_maker = {
+"     \ 'exe': 'jscs',
+"     \ 'args': ['--nocolor', '--preset', 'airbnb', '--reporter', 'inline', '--esnext'],
+"     \ 'errorformat': '%f: line %l\, col %c\, %m',
+"     \ }
 
 " deoplete
 let g:deoplete#enable_at_startup = 1

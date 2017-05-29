@@ -15,13 +15,17 @@ call dein#add('junegunn/vim-easy-align')
 call dein#add('bronson/vim-trailing-whitespace')
 call dein#add('valloric/matchtagalways')
 " Async
-call dein#add('benekastah/neomake')
+" call dein#add('benekastah/neomake')
+call dein#add('w0rp/ale')
+" Navigate
+call dein#add('christoomey/vim-tmux-navigator')
 " Status lines/info
 call dein#add('tpope/vim-fugitive')
 call dein#add('mhinz/vim-signify')
 call dein#add('junegunn/gv.vim')
 call dein#add('manicmaniac/betterga')	" show details of character under cursor
 call dein#add('gorodinskiy/vim-coloresque') " preview colors
+call dein#add('junegunn/rainbow_parentheses.vim')
 
 if has("macunix")
     call dein#add('bling/vim-airline')
@@ -99,9 +103,11 @@ if has("termguicolors")
 endif
 
 "Neovim
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
 set clipboard+=unnamedplus
-let g:python_host_prog='/usr/bin/python3'
+let g:python_host_prog='/usr/bin/python2'
+let g:python3_host_prog='/usr/bin/python3'
 
 
 " delimitMate
@@ -118,21 +124,20 @@ augroup plugin_commentary
 augroup END
 
 " neomake
-let g:neomake_list_height = 5
-let g:neomake_open_list = 2
-let g:neomake_logfile='/tmp/neomake_error.log'
-let g:neomake_python_enabled_makers = ['flake8']
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
-let g:neomake_php_enabled_makers = ['php']
-let g:neomake_html_enabled_makers = ['html']
-let g:neomake_logfile = '/home/derek/tmp/neomake.log'
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+" let g:neomake_list_height = 5
+" let g:neomake_open_list = 2
+" let g:neomake_logfile='/tmp/neomake_error.log'
+" let g:neomake_python_enabled_makers = ['flake8']
+" " let g:neomake_javascript_enabled_makers = ['eslint']
+" let g:neomake_jsx_enabled_makers = ['eslint']
+" let g:neomake_php_enabled_makers = ['php']
+" let g:neomake_html_enabled_makers = ['html']
 " let g:neomake_javascript_jscs_maker = {
 "     \ 'exe': 'jscs',
 "     \ 'args': ['--nocolor', '--preset', 'airbnb', '--reporter', 'inline', '--esnext'],
 "     \ 'errorformat': '%f: line %l\, col %c\, %m',
 "     \ }
+" let g:neomake_javascript_enabled_makers = ['eslint']
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -173,6 +178,8 @@ let g:pymode_rope = 0
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_ctrlp = 1
 
+" Rainbow
+call rainbow_parentheses#activate()
 
 " settings
 syntax enable
@@ -240,11 +247,11 @@ autocmd BufReadPost *
 	\	exe "normal g`\"" |
 	\ endif
 
-autocmd FileType python setlocal ts=4 sw=4 sts=4 expandtab autoindent
-autocmd FileType php setlocal ts=8 sw=8 sts=8 noexpandtab
-autocmd FileType javascript setlocal ts=4 sw=4 sts=4 expandtab autoindent
+" autocmd FileType python setlocal ts=4 sw=4 sts=4 expandtab autoindent
+" autocmd FileType php setlocal ts=4 sw=4 sts=4 noexpandtab
+" autocmd FileType javascript setlocal ts=4 sw=4 sts=4 expandtab autoindent
 
-autocmd! BufWritePost * Neomake
+" autocmd! BufWritePost * Neomake
 
 " Open help in vertical split (right)
 augroup vimrc_help
@@ -364,3 +371,16 @@ function! LightLineFugitive()
     endif
     return ''
 endfunction
+
+function! <SID>StripTrailingWhitespace()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>

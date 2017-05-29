@@ -1,5 +1,5 @@
 set runtimepath+=$HOME/.config/nvim/repos/github.com/Shougo/dein.vim
-set rtp+=~/.fzf
+set runtimepath+=~/.fzf
 
 call dein#begin(expand('~/.cache/dein'))
 
@@ -27,7 +27,7 @@ call dein#add('manicmaniac/betterga')	" show details of character under cursor
 call dein#add('gorodinskiy/vim-coloresque') " preview colors
 call dein#add('junegunn/rainbow_parentheses.vim')
 
-if has("macunix")
+if has('macunix')
     call dein#add('bling/vim-airline')
 else
     call dein#add('itchyny/lightline.vim')
@@ -98,7 +98,7 @@ endif
 colorscheme badwolf
 
 " Tmux truecolor
-if has("termguicolors")
+if has('termguicolors')
     set termguicolors
 endif
 
@@ -111,8 +111,8 @@ let g:python3_host_prog='/usr/bin/python3'
 
 
 " delimitMate
-let delimitMate_expand_cr = 1
-let delimitMate_expand_space = 0
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 0
 
 " commentary
 augroup plugin_commentary
@@ -144,11 +144,11 @@ let g:deoplete#enable_at_startup = 1
 set completeopt+=noinsert
 
 " ag (silver searcher)
-let g:ag_prg="ag --nogroup --nocolor --column --vimgrep"
+let g:ag_prg='ag --nogroup --nocolor --column --vimgrep'
 let g:ag_highlight=1
 
 " ctrlp - search through Most Recently Used by default
-let g:ctrlp_cmd = "CtrlPMRU"
+let g:ctrlp_cmd = 'CtrlPMRU'
 
 " Badwolf
 let g:badwolf_darkgutter = 1
@@ -159,7 +159,7 @@ let g:badwolf_css_props_highlight = 1
 let g:used_javascript_libs = 'jquery'
 
 " javascript beautifier
-if has("macunix")
+if has('macunix')
     let g:editorconfig_Beautifier = '/Users/derek/.config/nvim/.editorconfig'
 else
     let g:editorconfig_Beautifier = '/home/derek/.config/nvim/.editorconfig'
@@ -183,7 +183,7 @@ call rainbow_parentheses#activate()
 
 " settings
 syntax enable
-set novb
+set novisualbell
 set relativenumber number
 set autochdir
 set laststatus=2
@@ -192,7 +192,7 @@ set hidden
 set showmatch
 set noshowmode
 set colorcolumn=80
-set ts=4 sw=4 sts=4
+set tabstop=4 shiftwidth=4 softtabstop=4
 set expandtab
 set noswapfile
 set nobackup
@@ -203,7 +203,7 @@ set fillchars+=vert:│              " better looking window separator
 
 
 " mappings
-let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
 " No need for ex mode
 nnoremap Q <nop>
 " don't record macros
@@ -260,7 +260,7 @@ augroup vimrc_help
 augroup END
 
 " Airline
-if has("macunix")
+if has('macunix')
     let g:airline_left_sep = '▶'
     let g:airline_right_sep = '◀'
     let g:airline_section_b = '%{strftime("%b %d\ %I:%M")}' 
@@ -300,22 +300,22 @@ let g:lightline = {
 	\ }
 
 function! LightLineDateTime()
-    return strftime("%b %d\ %I:%M")
+    return strftime('%b %d\ %I:%M')
 endfunction
 
 function! LightLineModified()
-  return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+  return &filetype =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
 
 function! LightLineReadonly()
-  return &ft !~? 'help' && &readonly ? 'RO' : ''
+  return &filetype !~? 'help' && &readonly ? 'RO' : ''
 endfunction
 
 function! LightLineFilename()
-  let fname = expand('%:t')
-  return fname == 'ControlP' ? g:lightline.ctrlp_item :
+  let l:fname = expand('%:t')
+  return l:fname == 'ControlP' ? g:lightline.ctrlp_item :
         \ ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-        \ ('' != fname ? fname : '[No Name]') .
+        \ ('' != l:fname ? l:fname : '[No Name]') .
         \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
 endfunction
 
@@ -328,12 +328,12 @@ function! LightLineFiletype()
 endfunction
 
 function! LightLineFileencoding()
-  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc . ' ' . WebDevIconsGetFileFormatSymbol() : &enc) : ''
+  return winwidth(0) > 70 ? (strlen(&fileencoding) ? &fileencoding . ' ' . WebDevIconsGetFileFormatSymbol() : &encoding) : ''
 endfunction
 
 function! LightLineMode()
-    let fname = expand('%:t')
-    return fname == 'ControlP' ? 'CtrlP' :
+    let l:fname = expand('%:t')
+    return l:fname == 'ControlP' ? 'CtrlP' :
         \ winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
@@ -365,22 +365,22 @@ function! CtrlPStatusFunc_2(str)
 endfunction
 
 function! LightLineFugitive()
-    if exists("*fugitive#head")
-        let _ = fugitive#head()
-        return strlen(_) ? ' ' ._ : ''
+    if exists('*fugitive#head')
+        let l:_ = fugitive#head()
+        return strlen(l:_) ? ' ' .l:_ : ''
     endif
     return ''
 endfunction
 
 function! <SID>StripTrailingWhitespace()
     " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
+    let l:_s=@/
+    let l:l = line('.')
+    let l:c = col('.')
     " Do the business:
     %s/\s\+$//e
     " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
+    let @/=l:_s
+    call cursor(l:l, l:c)
 endfunction
 nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>

@@ -33,14 +33,12 @@ else
     call dein#add('itchyny/lightline.vim')
 endif
 
-" Navigate
-call dein#add('christoomey/vim-tmux-navigator')
-
 " Find stuff
 call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('junegunn/fzf')
 call dein#add('rking/ag.vim')
 call dein#add('Shougo/deoplete.nvim')
+call dein#add('roxma/nvim-completion-manager')
 " Syntax
 call dein#add('pearofducks/ansible-vim')
 call dein#add('othree/yajs.vim')
@@ -237,6 +235,7 @@ nnoremap <leader>ya ggVG"zy
 nnoremap ; :
 tnoremap <ESC><ESC> <C-\><C-n>
 cmap w!! w !sudo tee > /dev/null %
+nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
 
 " commands
 command! Clean %s/\s\+$//e | nohlsearch
@@ -263,7 +262,7 @@ augroup END
 if has('macunix')
     let g:airline_left_sep = '▶'
     let g:airline_right_sep = '◀'
-    let g:airline_section_b = '%{strftime("%b %d\ %I:%M")}' 
+    let g:airline_section_b = '%{strftime("%b %d\ %I:%M")}'
 endif
 
 " lightline
@@ -383,4 +382,3 @@ function! <SID>StripTrailingWhitespace()
     let @/=l:_s
     call cursor(l:l, l:c)
 endfunction
-nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>

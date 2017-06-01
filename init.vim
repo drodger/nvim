@@ -101,8 +101,9 @@ if has('termguicolors')
 endif
 
 "Neovim
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
+set guicursor=
 set clipboard+=unnamedplus
 let g:python_host_prog='/usr/bin/python2'
 let g:python3_host_prog='/usr/bin/python3'
@@ -236,6 +237,8 @@ nnoremap ; :
 tnoremap <ESC><ESC> <C-\><C-n>
 cmap w!! w !sudo tee > /dev/null %
 nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " commands
 command! Clean %s/\s\+$//e | nohlsearch

@@ -154,8 +154,15 @@ augroup vimrc_help
     autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
 augroup END
 
-" Auto-resize windows when split
+" auto-resize windows when split
 autocmd VimResized * wincmd =
+
+" Airline
+if has('macunix')
+    let g:airline_left_sep = '▶'
+    let g:airline_right_sep = '◀'
+    let g:airline_section_b = '%{strftime("%b %d\ %I:%M")}'
+endif
 
 " lightline
 let g:lightline = {

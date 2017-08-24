@@ -116,7 +116,8 @@ set undoreload=1000
 set clipboard+=unnamedplus
 set fillchars+=vert:│              " better looking window separator
 set synmaxcol=200                  " only syntax highlight first 200 characters of a line
-set wildignore=+*.pyc
+" ignore python compiled files
+set wildignore+=*.pyc
 
 " Keyboard mappings
 let g:mapleader = "\<Space>"

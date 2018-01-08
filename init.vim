@@ -302,7 +302,7 @@ let g:lightline = {
 	\ }
 
 function! LightLineDateTime()
-    return strftime('%b %d\ %I:%M')
+    return strftime('%b %d %I:%M')
 endfunction
 
 function! LightLineModified()

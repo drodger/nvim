@@ -4,5 +4,4 @@ repos/
 .netrwhist
 viminfo
 .init.vim-rplugin~
-pack/*
-pack/minpac/start/matchtagalways
+pack/

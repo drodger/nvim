@@ -6,7 +6,9 @@
 " Start NeoVIM
 " :packadd minpac
 " :call minpac#init()
+" Restart nvim
 " :call minpac#update()
+" Restart nvim
 
 packadd minpac
 call minpac#init()

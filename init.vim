@@ -16,6 +16,7 @@ call minpac#init()
 " Plugins
 call minpac#add('christoomey/vim-tmux-navigator')
 call minpac#add('ctrlpvim/ctrlp.vim')
+call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('gko/vim-coloresque')
 call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
@@ -131,10 +132,10 @@ map <leader>c "+y
 map <leader>p "+p
 vmap <leader>c "+y
 vmap <leader>p "+p
-nmap <leader>l :lclose<CR>
+nmap <leader>l :lclose<CR> :cclose<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-nnoremap <silent> <C-p> :FZF -m<cr>
+" nnoremap <silent> <C-p> :FZF -m<cr>
 nnoremap <leader>w :w<CR>
 nmap <silent> <leader>f :Files<CR>
 nmap <silent> <leader>g :Grepper<CR>

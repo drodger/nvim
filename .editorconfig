@@ -9,7 +9,6 @@ end_of_line = lf
 charset = utf-8
 
 [*.{js,json}]
-path=~/.cache/dein/.dein/plugin/lib/js/lib/beautify.js
 bin=node
 indent_style = space
 indent_size = 4
@@ -21,13 +20,11 @@ indent_style = space
 indent_size = 4
 
 [*.{less,css}]
-path=~/.cache/dein/.dein/plugin/lib/js/lib/beautify-css.js
 indent_style = space
 indent_size = 4
 brace_style = collapse
 
 [**.html]
-path=~/.cache/dein/.dein/plugin/lib/js/lib/beautify-html.js
 indent_style = space
 indent_size = 2
 max_char = 78

@@ -21,6 +21,7 @@ call minpac#add('gko/vim-coloresque')
 call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('junegunn/gv.vim')
+call minpac#add('isRuslan/vim-es6')
 call minpac#add('itchyny/lightline.vim')
 call minpac#add('majutsushi/tagbar')
 call minpac#add('mhinz/vim-grepper')
@@ -30,7 +31,7 @@ call minpac#add('pearofducks/ansible-vim')
 call minpac#add('python-mode/python-mode')
 call minpac#add('Raimondi/delimitMate')
 call minpac#add('ryanoasis/vim-devicons')
-call minpac#add('roxma/nvim-completion-manager')
+call minpac#add('ncm2/ncm2')
 call minpac#add('sjl/badwolf')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-fugitive')
@@ -62,6 +63,9 @@ augroup plugin_commentary
     au FileType unix setlocal commentstring=\"\ %s
 augroup END
 
+" es6 syntax highlighting
+augroup filetype javascript syntax=javascript
+
 " nvim-autocompletion
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -87,9 +91,9 @@ let g:ale_sign_error = '✗'
 " ctags --languages=python,php --python-kinds=-vi --tag-relative=yes -f ./tags -R --fields=+iaSszt --extras=+q ./
 
 " Specify version of python to use
-if !filereadable("/etc/os-release")
-    let g:python_host_prog = 'python3.6'
-endif
+"if !filereadable("/etc/os-release")
+    let g:python_host_prog = 'python3.7'
+" endif
 " Installing Python36 under Ubuntu:
 " sudo add-apt-repository ppa:jonathonf/python-3.6
 " sudo apt update

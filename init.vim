@@ -32,6 +32,16 @@ call minpac#add('python-mode/python-mode')
 call minpac#add('Raimondi/delimitMate')
 call minpac#add('ryanoasis/vim-devicons')
 call minpac#add('ncm2/ncm2')
+call minpac#add('ncm2/ncm2-bufword')
+call minpac#add('ncm2/ncm2-github')
+call minpac#add('ncm2/ncm2')
+call minpac#add('ncm2/ncm2-tmux')
+call minpac#add('ncm2/ncm2-tagprefix')
+call minpac#add('filipekiss/ncm2-look.vim')
+call minpac#add('ncm2/ncm2-cssomni')
+call minpac#add('ncm2/ncm2-tern')
+call minpac#add('ncm2/ncm2-jedi')  " Don't forget to pip install jedi
+call minpac#add('roxma/nvim-yarp')
 call minpac#add('sjl/badwolf')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-fugitive')
@@ -88,11 +98,11 @@ let g:ale_sign_error = '✗'
 
 " build ctags:
 " From within something like erezlife/
-" ctags --languages=python,php --python-kinds=-vi --tag-relative=yes -f ./tags -R --fields=+iaSszt --extras=+q ./
+" ctags --languages=python,javascript --python-kinds=-vi --tag-relative=yes -f ./tags -R --fields=+iaSszt --extras=+q ./
 
 " Specify version of python to use
 "if !filereadable("/etc/os-release")
-    let g:python_host_prog = 'python3.7'
+    let g:python_host_prog = 'python3'
 " endif
 " Installing Python36 under Ubuntu:
 " sudo add-apt-repository ppa:jonathonf/python-3.6
@@ -164,6 +174,13 @@ augroup END
 
 " auto-resize windows when split
 autocmd VimResized * wincmd =
+
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANTE: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
 
 " Airline
 if has('macunix')

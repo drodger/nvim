@@ -5,3 +5,4 @@ repos/
 viminfo
 .init.vim-rplugin~
 pack/
+venv/

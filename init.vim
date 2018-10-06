@@ -101,17 +101,18 @@ let g:ale_sign_error = '✗'
 " ctags --languages=python,javascript --python-kinds=-vi --tag-relative=yes -f ./tags -R --fields=+iaSszt --extras=+q ./
 
 " Specify version of python to use
-"if !filereadable("/etc/os-release")
-    let g:python_host_prog = 'python3'
-" endif
-" Installing Python36 under Ubuntu:
-" sudo add-apt-repository ppa:jonathonf/python-3.6
-" sudo apt update
-" sudo apt install python3.6
-" sudo apt install python3.6-dev
-" sudo apt install python3.6-venv
-" wget https://bootstrap.pypa.io/get-pip.py
-" sudo python3.6 get-pip.py
+if "$VIRTUAL_ENV"
+    let g:python3_host_prog = '$HOME/.config/nvim/venv/bin/python3'
+else
+    let g:python3_host_prog = 'python3.7'
+endif
+
+" Install python 3.7 under Buntu
+" wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
+" ./configure
+" make -j4
+" Don't clobber the system Python:
+" sudo make altinstall
 
 " Settings
 filetype plugin indent on

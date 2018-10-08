@@ -104,8 +104,9 @@ let g:ale_sign_error = '✗'
 if filereadable("$HOME/.config/nvim/venv/bin/python")
     source $HOME/.config/nvim/venv/bin/activate.fish
 else
-    let g:python3_host_prog = 'python3.7'
+    let g:python3_host_prog = '/usr/local/bin/python3.7'
 endif
+let g:python_host_prog = '/usr/bin/python2.7'
 
 " Install python 3.7 under Buntu
 " wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz

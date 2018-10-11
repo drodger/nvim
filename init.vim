@@ -39,8 +39,8 @@ call minpac#add('ncm2/ncm2-tmux')
 call minpac#add('ncm2/ncm2-tagprefix')
 call minpac#add('filipekiss/ncm2-look.vim')
 call minpac#add('ncm2/ncm2-cssomni')
-call minpac#add('ncm2/ncm2-tern')
-call minpac#add('ncm2/ncm2-jedi')  " Don't forget to pip install jedi
+call minpac#add('ncm2/ncm2-tern')  " `npm install` @ pack/minpac/start/ncm2-tern/
+call minpac#add('ncm2/ncm2-jedi')  " Don't forget to create venv
 call minpac#add('roxma/nvim-yarp')
 call minpac#add('sjl/badwolf')
 call minpac#add('tpope/vim-commentary')
@@ -103,12 +103,14 @@ let g:ale_sign_error = '✗'
 " Specify version of python to use
 if filereadable(expand("~/.config/nvim/venv/bin/python3"))
     let g:python3_host_prog = expand("~/.config/nvim/venv/bin/python3")
+    let g:python_host_prog = expand("~/.config/nvim/venv/bin/python3")
 else
     let g:python3_host_prog = '/usr/local/bin/python3.7'
+    let g:python_host_prog = '/usr/local/bin/python3.7'
 endif
-let g:python_host_prog = '/usr/bin/python2.7'
+let g:python2_host_prog = '/usr/bin/python2.7'
 
-" Install python 3.7 under Buntu
+" Install python 3.7 under ubuntu
 " wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
 " ./configure
 " make -j4

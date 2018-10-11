@@ -101,8 +101,8 @@ let g:ale_sign_error = '✗'
 " ctags --languages=python,javascript --python-kinds=-vi --tag-relative=yes -f ./tags -R --fields=+iaSszt --extras=+q ./
 
 " Specify version of python to use
-if filereadable("$HOME/.config/nvim/venv/bin/python")
-    source $HOME/.config/nvim/venv/bin/activate.fish
+if filereadable(expand("~/.config/nvim/venv/bin/python3"))
+    let g:python3_host_prog = expand("~/.config/nvim/venv/bin/python3")
 else
     let g:python3_host_prog = '/usr/local/bin/python3.7'
 endif

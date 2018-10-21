@@ -185,6 +185,8 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 " IMPORTANTE: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect
 
+" Set shell to use in terminal
+set shell=/usr/bin/fish
 
 " Airline
 if has('macunix')
@@ -212,17 +214,16 @@ let g:lightline = {
 	\   'fileformat': 'LightLineFileformat',
 	\   'filetype': 'LightLineFiletype',
 	\   'fileencoding': 'LightLineFileencoding',
-	\   'ctrlpmark': 'CtrlPMark',
-    \   'fugitive': 'LightLineFugitive',
+    \   'gitbranch': 'fugitive#head',
     \   'datetime': 'LightLineDateTime'
 	\ },
 	\ 'component_expand': {
-	\   'syntastic': 'SyntasticStatuslineFlag',
-	\ },
+    \   'syntastic': 'SyntasticStatuslineFlag',
+    \ },
 	\ 'component_type': {
 	\   'syntastic': 'error',
 	\ },
-	\ 'separator': { 'left': '', 'right': '' },
+    \ 'separator': { 'left': '', 'right': '' },
 	\ 'subseparator': { 'left': '', 'right': '' }
 	\ }
 

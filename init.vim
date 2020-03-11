@@ -49,6 +49,7 @@ call minpac#add('tpope/vim-jdaddy')
 call minpac#add('tpope/vim-surround')
 call minpac#add('universal-ctags/ctags')
 call minpac#add('valloric/matchtagalways')
+call minpac#add('vimwiki/vimwiki')
 call minpac#add('w0rp/ale')
 
 command! PackUpdate call minpac#update()
@@ -95,6 +96,10 @@ let g:pymode_syntax_docstrings = g:pymode_syntax_all
 " w0rp/ale
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✗'
+
+" Use Markdown for vimwiki
+let g:vimwiki_list = [{'path': '~/private/notes/', 'syntax': 'markdown',
+                      \ 'ext': '.md'}]
 
 " build ctags:
 " From within something like erezlife/
@@ -162,6 +167,8 @@ nmap <silent> <leader>t :Tags<CR>
 tnoremap <ESC><ESC> <C-\><C-n>
 cmap w!! w !sudo tee > /dev/null %
 nmap <silent> <leader><space> :StripWhitespace<CR>
+nmap <leader>j :%!python -m json.tool<CR>
+map <F4> :Guifont DejaVu Sans Mono:h14<CR>
 
 " Functions
 " Restore cursor position on file load
@@ -186,7 +193,7 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 
 " Set shell to use in terminal
-set shell=/usr/bin/fish
+set shell=/usr/bin/zsh
 
 " Airline
 if has('macunix')

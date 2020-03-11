@@ -41,6 +41,7 @@ call minpac#add('filipekiss/ncm2-look.vim')
 call minpac#add('ncm2/ncm2-cssomni')
 call minpac#add('ncm2/ncm2-tern')  " `npm install` @ pack/minpac/start/ncm2-tern/
 call minpac#add('ncm2/ncm2-jedi')  " Don't forget to create venv
+call minpac#add('preservim/nerdtree')
 call minpac#add('roxma/nvim-yarp')
 call minpac#add('sjl/badwolf')
 call minpac#add('tpope/vim-commentary')
@@ -153,6 +154,7 @@ nmap <F8> :TagbarToggle<CR>
 nnoremap ; :
 map <leader>c "+y
 map <leader>p "+p
+map <C-n> :NERDTreeToggle<CR>
 vmap <leader>c "+y
 vmap <leader>p "+p
 nmap <leader>l :lclose<CR> :cclose<CR>

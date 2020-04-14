@@ -101,6 +101,9 @@ let g:ale_sign_error = '✗'
 " Use Markdown for vimwiki
 let g:vimwiki_list = [{'path': '~/private/notes/', 'syntax': 'markdown',
                       \ 'ext': '.md'}]
+let g:vimwiki_hl_headers = 1
+let g:vimwiki_hl_cb_checked = 1
+
 
 " build ctags:
 " From within something like erezlife/
@@ -145,6 +148,7 @@ set fillchars+=vert:│              " better looking window separator
 set synmaxcol=200                  " only syntax highlight first 200 characters of a line
 " ignore python compiled files
 set wildignore+=*.pyc
+set mouse=a                         " enable mouse in neovim
 
 " Keyboard mappings
 let g:mapleader = "\<Space>"

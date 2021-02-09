@@ -28,21 +28,12 @@ call minpac#add('mhinz/vim-grepper')
 call minpac#add('mhinz/vim-signify')
 call minpac#add('ntpeters/vim-better-whitespace')
 call minpac#add('pearofducks/ansible-vim')
+call minpac#add('psf/black')
 call minpac#add('python-mode/python-mode')
 call minpac#add('Raimondi/delimitMate')
 call minpac#add('ryanoasis/vim-devicons')
-call minpac#add('ncm2/ncm2')
-call minpac#add('ncm2/ncm2-bufword')
-call minpac#add('ncm2/ncm2-github')
-call minpac#add('ncm2/ncm2')
-call minpac#add('ncm2/ncm2-tmux')
-call minpac#add('ncm2/ncm2-tagprefix')
-call minpac#add('filipekiss/ncm2-look.vim')
-call minpac#add('ncm2/ncm2-cssomni')
-call minpac#add('ncm2/ncm2-tern')  " `npm install` @ pack/minpac/start/ncm2-tern/
-call minpac#add('ncm2/ncm2-jedi')  " Don't forget to create venv
+call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 call minpac#add('preservim/nerdtree')
-call minpac#add('roxma/nvim-yarp')
 call minpac#add('sjl/badwolf')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-fugitive')
@@ -51,7 +42,8 @@ call minpac#add('tpope/vim-surround')
 call minpac#add('universal-ctags/ctags')
 call minpac#add('valloric/matchtagalways')
 call minpac#add('vimwiki/vimwiki')
-call minpac#add('w0rp/ale')
+" call minpac#add('w0rp/ale')
+call minpac#add('dense-analysis/ale')
 
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
@@ -97,6 +89,7 @@ let g:pymode_syntax_docstrings = g:pymode_syntax_all
 " w0rp/ale
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✗'
+" let g:ale_completion_enabled = 1
 
 " Use Markdown for vimwiki
 let g:vimwiki_list = [{'path': '~/private/notes/', 'syntax': 'markdown',
@@ -104,6 +97,11 @@ let g:vimwiki_list = [{'path': '~/private/notes/', 'syntax': 'markdown',
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 1
 
+" fzf
+let g:fzf_tags_command = 'ctags -R'
+let $FZF_DEFAULT_COMMAND="rg --files --hidden"
+
+" Black python formatter
 
 " build ctags:
 " From within something like erezlife/
@@ -149,6 +147,132 @@ set synmaxcol=200                  " only syntax highlight first 200 characters 
 " ignore python compiled files
 set wildignore+=*.pyc
 set mouse=a                         " enable mouse in neovim
+" settings for coc.vim
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+set termguicolors
+
+" because I always type it wrong:
+iab teh the
+iab thsi this
+
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
+" use <c-space> to trigger completion
+inoremap <silent><expr> <c-space> coc#refresh()
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current line.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Introduce function text object
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+
+" Use <TAB> for selections ranges.
+" NOTE: Requires 'textDocument/selectionRange' support from the language server.
+" coc-tsserver, coc-python are the examples of servers that support it.
+nmap <silent> <TAB> <Plug>(coc-range-select)
+xmap <silent> <TAB> <Plug>(coc-range-select)
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Mappings using CoCList:
+" Show all diagnostics.
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands.
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " Keyboard mappings
 let g:mapleader = "\<Space>"
@@ -170,6 +294,7 @@ nmap <silent> <leader>f :Files<CR>
 nmap <silent> <leader>g :Grepper<CR>
 nmap <silent> <leader>u :Buffers<CR>
 nmap <silent> <leader>t :Tags<CR>
+nmap <silent> <leader>fb :Black<CR>
 tnoremap <ESC><ESC> <C-\><C-n>
 cmap w!! w !sudo tee > /dev/null %
 nmap <silent> <leader><space> :StripWhitespace<CR>
@@ -193,7 +318,7 @@ augroup END
 autocmd VimResized * wincmd =
 
 " enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
+" autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " IMPORTANTE: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect

@@ -22,6 +22,7 @@ call minpac#add('junegunn/fzf.vim')
 call minpac#add('isRuslan/vim-es6')
 call minpac#add('majutsushi/tagbar')
 call minpac#add('mhinz/vim-signify')
+call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 call minpac#add('ntpeters/vim-better-whitespace')
 call minpac#add('nvim-treesitter/nvim-treesitter')
 call minpac#add('pearofducks/ansible-vim')
@@ -48,10 +49,6 @@ command! PackClean call minpac#clean()
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
 
-" Grepper
-let g:grepper = {}
-let g:grepper.tools = ['rg', 'git', 'grep']
-
 " webdevicons
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_ctrlp = 1
@@ -66,20 +63,45 @@ augroup END
 " es6 syntax highlighting
 augroup filetype javascript syntax=javascript
 
+"  CoC auto completion
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 " nvim-autocompletion
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " python-mode
+let g:pymode_breakpoint = 0
 let g:pymode_folding = 0
 let g:pymode_indent = 1
-let g:pymode_virtualenv = 1
+let g:pymode_lint = 0  " let ale do linting
+let g:pymode_motion = 1
 let g:pymode_rope = 0
 let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
 let g:pymode_syntax_slow_sync = 1  " slower, but better
 let g:pymode_syntax_highlight_exceptions = g:pymode_syntax_all
 let g:pymode_syntax_docstrings = g:pymode_syntax_all
+let g:pymode_virtualenv = 1
+let g:pymode_warnings = 1
+
+" ale linter
+let g:ale_sign_warning = '▲'
+let g:ale_sign_error = '✗'
+let g:ale_fixers = {
+\ 'python': ['black'],
+\}
+let g:airline#extensions#ale#enabled = 1
+let g:ale_list_window_size = 1
 
 " Use Markdown for vimwiki
 let g:vimwiki_list = [{'path': '~/private/notes/', 'syntax': 'markdown',
@@ -102,8 +124,8 @@ if filereadable(expand("~/.config/nvim/venv/bin/python3"))
     let g:python3_host_prog = expand("~/.config/nvim/venv/bin/python3")
     let g:python_host_prog = expand("~/.config/nvim/venv/bin/python3")
 else
-    let g:python3_host_prog = '/usr/local/bin/python3.7'
-    let g:python_host_prog = '/usr/local/bin/python3.7'
+    let g:python3_host_prog = '/usr/local/bin/python3.9'
+    let g:python_host_prog = '/usr/local/bin/python3.9'
 endif
 let g:python2_host_prog = '/usr/bin/python2.7'
 
@@ -138,6 +160,13 @@ set synmaxcol=200                  " only syntax highlight first 200 characters 
 set wildignore+=*.pyc
 set mouse=a                         " enable mouse in neovim
 
+" settings for coc.vim
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+set termguicolors
+
 " because I always type it wrong:
 iab teh the
 iab thsi this
@@ -162,7 +191,8 @@ nnoremap <leader>w :w<CR>
 nmap <silent> <leader>f :Files<CR>
 nmap <silent> <leader>u :Buffers<CR>
 nmap <silent> <leader>t :Tags<CR>
-nmap <silent> <leader>fb :Black<CR>
+nmap <silent> <leader>b :Black<CR>
+nnoremap <leader>rg :Rg<Space>
 tnoremap <ESC><ESC> <C-\><C-n>
 cmap w!! w !sudo tee > /dev/null %
 nmap <silent> <leader><space> :StripWhitespace<CR>
@@ -195,6 +225,7 @@ if has('macunix')
     let g:airline_section_b = '%{strftime("%b %d\ %I:%M")}'
 endif
 
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts=1
 let g:airline_section_error=''
 let g:airline_section_warning=''

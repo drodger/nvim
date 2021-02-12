@@ -14,8 +14,10 @@ packadd minpac
 call minpac#init()
 
 " Plugins
+call minpac#add('codota/tabnine-vim')
 call minpac#add('ctrlpvim/ctrlp.vim')
 call minpac#add('editorconfig/editorconfig-vim')
+call minpac#add('f-person/git-blame.nvim')
 call minpac#add('gko/vim-coloresque')
 call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
@@ -127,7 +129,7 @@ else
     let g:python3_host_prog = '/usr/local/bin/python3.9'
     let g:python_host_prog = '/usr/local/bin/python3.9'
 endif
-let g:python2_host_prog = '/usr/bin/python2.7'
+" let g:python2_host_prog = '/usr/bin/python2.7'
 
 " Install python 3.x under ubuntu
 " wget https://www.python.org/ftp/python/3.x.0/Python-3.x.0.tar.xz
@@ -192,7 +194,7 @@ nmap <silent> <leader>f :Files<CR>
 nmap <silent> <leader>u :Buffers<CR>
 nmap <silent> <leader>t :Tags<CR>
 nmap <silent> <leader>b :Black<CR>
-nnoremap <leader>rg :Rg<Space>
+nnoremap <leader>g :Rg<CR>
 tnoremap <ESC><ESC> <C-\><C-n>
 cmap w!! w !sudo tee > /dev/null %
 nmap <silent> <leader><space> :StripWhitespace<CR>

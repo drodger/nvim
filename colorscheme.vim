@@ -1,4 +1,5 @@
 colorscheme badwolf
+" colorscheme panenight
 
 " Make the gutters darker than the background.
 let g:badwolf_darkgutter = 1
@@ -14,3 +15,8 @@ let g:badwolf_tabline = 0
 
 " Make the tab line much lighter than the background.
 " let g:badwolf_tabline = 3
+
+
+let g:airline_theme = "panenight"
+let g:panenight_terminal_italics = 1
+set termguicolors

@@ -10,43 +10,15 @@
 " :call minpac#update()
 " Restart nvim
 
-packadd minpac
-call minpac#init()
-
-" Plugins
-call minpac#add('codota/tabnine-vim')
-call minpac#add('ctrlpvim/ctrlp.vim')
-call minpac#add('editorconfig/editorconfig-vim')
-call minpac#add('f-person/git-blame.nvim')
-call minpac#add('gko/vim-coloresque')
-call minpac#add('junegunn/fzf')
-call minpac#add('junegunn/fzf.vim')
-call minpac#add('isRuslan/vim-es6')
-call minpac#add('kevinhwang91/rnvimr')
-call minpac#add('majutsushi/tagbar')
-call minpac#add('mhinz/vim-signify')
-call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
-call minpac#add('ntpeters/vim-better-whitespace')
-call minpac#add('nvim-treesitter/nvim-treesitter')
-call minpac#add('pearofducks/ansible-vim')
-call minpac#add('psf/black')
-call minpac#add('python-mode/python-mode')
-call minpac#add('Raimondi/delimitMate')
-call minpac#add('ryanoasis/vim-devicons')
-call minpac#add('sjl/badwolf')
-call minpac#add('tpope/vim-commentary')
-call minpac#add('tpope/vim-fugitive')
-call minpac#add('tpope/vim-jdaddy')
-call minpac#add('tpope/vim-surround')
-call minpac#add('universal-ctags/ctags')
-call minpac#add('valloric/matchtagalways')
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('vimwiki/vimwiki')
-call minpac#add('dense-analysis/ale')
-
-command! PackUpdate call minpac#update()
-command! PackClean call minpac#clean()
-
+" plugins.vim must come first
+source $HOME/.config/nvim/plugins.vim
+source $HOME/.config/nvim/airline.vim
+source $HOME/.config/nvim/coc.vim
+source $HOME/.config/nvim/colorscheme.vim
+source $HOME/.config/nvim/ctrlp.vim
+source $HOME/.config/nvim/fzf.vim
+source $HOME/.config/nvim/plug-config/rnvimr.vim
+source $HOME/.config/nvim/python-mode.vim
 
 " webdevicons
 let g:webdevicons_enable = 1
@@ -169,13 +141,4 @@ autocmd VimResized * wincmd =
 
 " Set shell to use in terminal
 set shell=/usr/bin/zsh
-
-
-source $HOME/.config/nvim/airline.vim
-source $HOME/.config/nvim/coc.vim
-source $HOME/.config/nvim/colorscheme.vim
-source $HOME/.config/nvim/ctrlp.vim
-source $HOME/.config/nvim/fzf.vim
-source $HOME/.config/nvim/plug-config/rnvimr.vim
-source $HOME/.config/nvim/python-mode.vim
 

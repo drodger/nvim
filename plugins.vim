@@ -51,5 +51,7 @@ call minpac#add('vimwiki/vimwiki')
 call minpac#add('dense-analysis/ale')
 
 command! PackUpdate call minpac#update()
+command! PU call minpac#update()
 command! PackClean call minpac#clean()
+command! PC call minpac#clean()
 

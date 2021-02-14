@@ -6,5 +6,5 @@ nmap <silent> <leader>f :Files<CR>
 nmap <silent> <leader>b :Buffers<CR>
 nmap <silent> <leader>t :Tags<CR>
 nmap <silent> <leader>fb :Black<CR>
-nnoremap <leader>g :Rg<CR>
+nmap <silent> <leader>g :Rg<CR>
 

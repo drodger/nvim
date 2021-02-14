@@ -12,6 +12,7 @@
 
 " plugins.vim must come first
 source $HOME/.config/nvim/plugins.vim
+source $HOME/.config/nvim/ale.vim
 source $HOME/.config/nvim/airline.vim
 source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/colorscheme.vim
@@ -19,6 +20,7 @@ source $HOME/.config/nvim/ctrlp.vim
 source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/python-mode.vim
+source $HOME/.config/nvim/vimwiki.vim
 
 " webdevicons
 let g:webdevicons_enable = 1
@@ -38,20 +40,6 @@ augroup filetype javascript syntax=javascript
 " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" ale linter
-let g:ale_sign_warning = '▲'
-let g:ale_sign_error = '✗'
-let g:ale_fixers = {
-\ 'python': ['black'],
-\}
-let g:ale_list_window_size = 1
-
-" Use Markdown for vimwiki
-let g:vimwiki_list = [{'path': '~/private/notes/', 'syntax': 'markdown',
-                      \ 'ext': '.md'}]
-let g:vimwiki_hl_headers = 1
-let g:vimwiki_hl_cb_checked = 1
-
 " build ctags:
 " From within something like erezlife/
 " ctags --languages=python,javascript --python-kinds=-vi --tag-relative=yes -f ./tags -R --fields=+iaSszt --extras=+q ./
@@ -64,7 +52,6 @@ else
     let g:python3_host_prog = '/usr/local/bin/python3.9'
     let g:python_host_prog = '/usr/local/bin/python3.9'
 endif
-" let g:python2_host_prog = '/usr/bin/python2.7'
 
 " Install python 3.x under ubuntu
 " wget https://www.python.org/ftp/python/3.x.0/Python-3.x.0.tar.xz
@@ -91,7 +78,7 @@ set undofile
 set undoreload=1000
 set clipboard+=unnamedplus
 set fillchars+=vert:│              " better looking window separator
-set synmaxcol=200                  " only syntax highlight first 200 characters of a line
+set synmaxcol=160                  " only syntax highlight first 160 characters of a line
 " ignore python compiled files
 set wildignore+=*.pyc
 set mouse=a                         " enable mouse in neovim

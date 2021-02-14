@@ -46,6 +46,7 @@ call minpac#add('tpope/vim-surround')
 call minpac#add('universal-ctags/ctags')
 call minpac#add('valloric/matchtagalways')
 call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('vimwiki/vimwiki')
 " linters
 call minpac#add('dense-analysis/ale')

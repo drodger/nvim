@@ -11,6 +11,7 @@ let g:airline_powerline_fonts=1
 let g:airline_section_error=''
 let g:airline_section_warning=''
 let g:airline#extensions#branch#format = 'CustomBranchName'
+let g:airline_theme = 'badwolf'
 
 function! CustomBranchName(name)
     let size = strlen(a:name)

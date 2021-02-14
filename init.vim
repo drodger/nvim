@@ -47,11 +47,13 @@ augroup filetype javascript syntax=javascript
 " Specify version of python to use
 if filereadable(expand("~/.config/nvim/venv/bin/python3"))
     let g:python3_host_prog = expand("~/.config/nvim/venv/bin/python3")
-    let g:python_host_prog = expand("~/.config/nvim/venv/bin/python3")
 else
     let g:python3_host_prog = '/usr/local/bin/python3.9'
-    let g:python_host_prog = '/usr/local/bin/python3.9'
 endif
+" Disable Python 2 support
+let g:loaded_python_provider=0
+" Disable Perl support
+let g:loaded_perl_provider = 0
 
 " Install python 3.x under ubuntu
 " wget https://www.python.org/ftp/python/3.x.0/Python-3.x.0.tar.xz

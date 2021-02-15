@@ -11,7 +11,7 @@ vmap <leader>p "+p
 nmap <leader>l :lclose<CR> :cclose<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-" nnoremap <silent> <C-p> :FZF -m<cr>
+nnoremap <silent> <C-p> :History<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>ra :RnvimrToggle<CR>
 tnoremap <ESC><ESC> <C-\><C-n>

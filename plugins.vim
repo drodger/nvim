@@ -4,7 +4,6 @@ call minpac#init()
 " Plugins
 call minpac#add('christoomey/vim-tmux-navigator')
 call minpac#add('codota/tabnine-vim')
-call minpac#add('ctrlpvim/ctrlp.vim')
 " colorscheme
 call minpac#add('dislabled/panenight.vim')
 call minpac#add('editorconfig/editorconfig-vim')

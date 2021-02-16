@@ -1,9 +1,10 @@
 " Keyboard mappings
 let g:mapleader = "\<Space>"
+nnoremap ; :
 map <F2> :set invpaste paste?
 map <F3> :nohlsearch<CR>
+map <F4> :Guifont DejaVu Sans Mono:h16<CR>
 nmap <F8> :TagbarToggle<CR>
-nnoremap ; :
 map <leader>c "+y
 map <leader>p "+p
 vmap <leader>c "+y
@@ -23,7 +24,7 @@ vnoremap > >gv
 cmap w!! w !sudo tee > /dev/null %
 nmap <silent> <leader><space> :StripWhitespace<CR>
 nmap <leader>j :%!python -m json.tool<CR>
-map <F4> :Guifont DejaVu Sans Mono:h16<CR>
+nnoremap <leader>s :%s//g<left><left>
 
 " Use alt+ arrow keys to resize windows
 nnoremap <M-Down>  :resize -2<CR>

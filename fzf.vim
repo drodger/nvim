@@ -2,9 +2,9 @@
 let g:fzf_tags_command = 'ctags -R'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 
-nmap <silent> <leader>f :Files<CR>
-nmap <silent> <leader>b :Buffers<CR>
-nmap <silent> <leader>t :Tags<CR>
-nmap <silent> <leader>fb :Black<CR>
-nmap <silent> <leader>g :Rg<CR>
+nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>t :Tags<CR>
+nnoremap <silent> <leader>fb :Black<CR>
+nnoremap <silent> <leader>g :Rg<CR>
 

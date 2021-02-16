@@ -18,10 +18,11 @@ source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/colorscheme.vim
 source $HOME/.config/nvim/ctrlp.vim
 source $HOME/.config/nvim/functions.vim
-source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/keys.vim
+source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/python-mode.vim
 source $HOME/.config/nvim/settings.vim
+source $HOME/.config/nvim/vim-rooter.vim
 source $HOME/.config/nvim/vimwiki.vim
 

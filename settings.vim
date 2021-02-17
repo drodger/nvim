@@ -21,6 +21,8 @@ set synmaxcol=160                  " only syntax highlight first 160 characters 
 set wildignore+=*.pyc
 set mouse=a                         " enable mouse in neovim
 
+" replace vimgrep
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 " because I always type it wrong:
 iab teh the
 iab thsi this

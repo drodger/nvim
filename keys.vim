@@ -9,7 +9,7 @@ tnoremap <ESC><ESC> <C-\><C-n>
 
 map <F2> :set invpaste paste?
 map <F3> :nohlsearch<CR>
-map <F4> :Guifont DejaVu Sans Mono:h16<CR>
+map <F4> :Guifont DejaVu Sans Mono:h18<CR>
 nmap <F8> :TagbarToggle<CR>
 
 map <leader>c "+y
@@ -40,4 +40,7 @@ nnoremap <M-Down>  :resize -2<CR>
 nnoremap <M-Up>    :resize +2<CR>
 nnoremap <M-Left>  :vertical resize -2<CR>
 nnoremap <M-Right> :vertical resize +2<CR>
+
+" Show git commit message
+nmap <Leader>m <Plug>(git-messenger)
 

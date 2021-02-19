@@ -15,6 +15,7 @@ call minpac#add('gko/vim-coloresque')
 " FZF
 call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
+call minpac#add('junegunn/gv.vim')
 
 call minpac#add('isRuslan/vim-es6')
 " ranger (file folders)
@@ -37,10 +38,13 @@ call minpac#add('python-mode/python-mode')
 call minpac#add('Raimondi/delimitMate')
 " Show icons for file types
 call minpac#add('ryanoasis/vim-devicons')
+call minpac#add('rhysd/git-messenger.vim')
+call minpac#add('SirVer/ultisnips')
 " colorscheme
 call minpac#add('sjl/badwolf')
 " Use gc to block out comments
 call minpac#add('tpope/vim-commentary')
+" Show git changes in gutter
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-jdaddy')
 call minpac#add('tpope/vim-surround')

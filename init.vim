@@ -11,18 +11,17 @@
 " Restart nvim
 
 " plugins.vim must come first
-source $HOME/.config/nvim/plugins.vim
-source $HOME/.config/nvim/ale.vim
-source $HOME/.config/nvim/airline.vim
-source $HOME/.config/nvim/coc.vim
-source $HOME/.config/nvim/colorscheme.vim
-source $HOME/.config/nvim/ctrlp.vim
-source $HOME/.config/nvim/functions.vim
-source $HOME/.config/nvim/keys.vim
-source $HOME/.config/nvim/fzf.vim " load after keys.vim
-source $HOME/.config/nvim/plug-config/rnvimr.vim
-source $HOME/.config/nvim/python-mode.vim
-source $HOME/.config/nvim/settings.vim
-source $HOME/.config/nvim/vim-rooter.vim
-source $HOME/.config/nvim/vimwiki.vim
+source $HOME/.config/nvim/my_settings/plugins.vim
+source $HOME/.config/nvim/my_settings/ale.vim
+source $HOME/.config/nvim/my_settings/airline.vim
+source $HOME/.config/nvim/my_settings/coc.vim
+source $HOME/.config/nvim/my_settings/colorscheme.vim
+source $HOME/.config/nvim/my_settings/functions.vim
+source $HOME/.config/nvim/my_settings/keys.vim
+source $HOME/.config/nvim/my_settings/fzf.vim " load after keys.vim
+source $HOME/.config/nvim/my_settings/plug-config/rnvimr.vim
+source $HOME/.config/nvim/my_settings/python-mode.vim
+source $HOME/.config/nvim/my_settings/settings.vim
+source $HOME/.config/nvim/my_settings/vim-rooter.vim
+source $HOME/.config/nvim/my_settings/vimwiki.vim
 

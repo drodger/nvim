@@ -5,7 +5,8 @@ call minpac#init()
 " Use project directory scope for FZF
 call minpac#add('airblade/vim-rooter')
 call minpac#add('christoomey/vim-tmux-navigator')
-call minpac#add('codota/tabnine-vim')
+" AI-driven code completion
+" call minpac#add('codota/tabnine-vim')
 " colorscheme
 call minpac#add('dislabled/panenight.vim')
 call minpac#add('editorconfig/editorconfig-vim')

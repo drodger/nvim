@@ -25,10 +25,9 @@ call minpac#add('kevinhwang91/rnvimr')
 call minpac#add('majutsushi/tagbar')
 " Show git change symbols in left gutter
 call minpac#add('mhinz/vim-signify')
-" Code completion
-call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 call minpac#add('ntpeters/vim-better-whitespace')
-call minpac#add('nvim-treesitter/nvim-treesitter')
+" Code completion
+call minpac#add('nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'})
 " syntax highlighting for ansible
 call minpac#add('pearofducks/ansible-vim')
 " Black Python code formatter

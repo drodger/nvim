@@ -14,7 +14,6 @@
 source $HOME/.config/nvim/my_settings/plugins.vim
 source $HOME/.config/nvim/my_settings/ale.vim
 source $HOME/.config/nvim/my_settings/airline.vim
-source $HOME/.config/nvim/my_settings/coc.vim
 source $HOME/.config/nvim/my_settings/colorscheme.vim
 source $HOME/.config/nvim/my_settings/functions.vim
 source $HOME/.config/nvim/my_settings/keys.vim

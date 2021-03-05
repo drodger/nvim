@@ -1,6 +1,9 @@
 flake8
 jedi
 neovim
+pyls-black
+pyls-isort
+python-language-server
 pynvim
 ranger-fm
 yarp

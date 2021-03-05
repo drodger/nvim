@@ -18,9 +18,11 @@ source $HOME/.config/nvim/my_settings/colorscheme.vim
 source $HOME/.config/nvim/my_settings/functions.vim
 source $HOME/.config/nvim/my_settings/keys.vim
 source $HOME/.config/nvim/my_settings/fzf.vim " load after keys.vim
+source $HOME/.config/nvim/my_settings/lsp.vim
 source $HOME/.config/nvim/my_settings/plug-config/rnvimr.vim
-source $HOME/.config/nvim/my_settings/python-mode.vim
+" source $HOME/.config/nvim/my_settings/python-mode.vim
 source $HOME/.config/nvim/my_settings/settings.vim
-source $HOME/.config/nvim/my_settings/vim-rooter.vim
+source $HOME/.config/nvim/my_settings/tree-sitter.vim
+" source $HOME/.config/nvim/my_settings/vim-rooter.vim
 source $HOME/.config/nvim/my_settings/vimwiki.vim
 

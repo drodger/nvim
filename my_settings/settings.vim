@@ -1,6 +1,6 @@
 " Settings
 filetype plugin indent on
-syntax enable
+" syntax enable
 set novisualbell
 set number
 set autochdir
@@ -55,8 +55,10 @@ augroup plugin_commentary
     au FileType unix setlocal commentstring=\"\ %s
 augroup END
 
+runtime ftplugin/man.vim
+
 " es6 syntax highlighting
-augroup filetype javascript syntax=javascript
+" augroup filetype javascript syntax=javascript
 
 " nvim-autocompletion
 " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"

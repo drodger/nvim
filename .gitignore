@@ -5,5 +5,6 @@ repos/
 viminfo
 .init.vim-rplugin~
 pack/
+plugins/
 venv/
 tags

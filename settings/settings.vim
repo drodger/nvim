@@ -33,4 +33,5 @@ let g:loaded_perl_provider = 0
 " webdevicons
 let g:webdevicons_enable = 1
 
+runtime ftplugin/man.vim
 

@@ -1,4 +1,4 @@
 lua << EOF
-    require'lspconfig'.pyls.setup{}
+    require'lspconfig'.pyls.setup{on_attach=require'completion'.on_attach}
 EOF
 

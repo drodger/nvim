@@ -35,3 +35,6 @@ let g:webdevicons_enable = 1
 
 runtime ftplugin/man.vim
 
+let g:completion_enable_snippet = 'UltiSnips'
+let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/.config/nvim/snips']
+

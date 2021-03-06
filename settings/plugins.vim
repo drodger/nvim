@@ -32,6 +32,10 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/completion-treesitter'
 Plug 'tami5/sql.nvim'
+" Snippets engine
+Plug 'SirVer/ultisnips'
+" Use the engine in neovim
+Plug 'honza/vim-snippets'
 
 " statusline
 Plug 'beauwilliams/statusline.lua'

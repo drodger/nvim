@@ -47,3 +47,7 @@ nnoremap <M-Right> :vertical resize +2<CR>
 command! PU :PlugUpdate
 command! PC :PlugClean
 
+let g:UltiSnipsExpandTrigger='<C-s>'
+let g:UltiSnipsJumpForwardTrigger='<C-j>'
+let g:UltiSnipsJumpBackwardTrigger='<C-k>'
+

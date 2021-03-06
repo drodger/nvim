@@ -6,6 +6,9 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nnoremap <leader>w :w<CR>
 tnoremap <ESC><ESC> <C-\><C-n>
 
+map <F3> :nohlsearch<CR>
+nmap <F8> :TagbarToggle<CR>
+
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<CR>
 nnoremap <leader>fg <cmd>Telescope live_grep<CR>
@@ -25,4 +28,22 @@ set completeopt=menuone,noinsert,noselect
 
 " Avoid showing message extra message when using completion
 set shortmess+=c
+
+" Uppercase word
+nnoremap <C-u> gUaw<CR>
+
+" Better tabbing
+vnoremap < <gv
+vnoremap > >gv
+
+nmap <silent> <leader><space> :StripWhitespace<CR>
+
+" Use alt+ arrow keys to resize windows
+nnoremap <M-Down>  :resize -2<CR>
+nnoremap <M-Up>    :resize +2<CR>
+nnoremap <M-Left>  :vertical resize -2<CR>
+nnoremap <M-Right> :vertical resize +2<CR>
+
+command! PU :PlugUpdate
+command! PC :PlugClean
 

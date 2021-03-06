@@ -60,7 +60,9 @@ Plug 'Raimondi/delimitMate'
 Plug 'vimwiki/vimwiki'
 
 " Show icons for file types
-" Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
+
+" Use editor config for project
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()

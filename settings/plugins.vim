@@ -28,14 +28,19 @@ Plug 'tpope/vim-fugitive'
 Plug 'neovim/nvim-lspconfig'
 
 " Code completion
-Plug 'nvim-lua/completion-nvim'
+" Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-compe'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 Plug 'nvim-treesitter/completion-treesitter'
 Plug 'tami5/sql.nvim'
+
 " Snippets engine
 Plug 'SirVer/ultisnips'
 " Use the engine in neovim
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
+Plug 'hrsh7th/vim-vsnip'
+" Plug 'norcalli/snippets.nvim'
 
 " statusline
 Plug 'beauwilliams/statusline.lua'

@@ -39,4 +39,4 @@ let g:completion_chain_complete_list = {
 			\}
 
 " Use completion-nvim in every buffer
-autocmd BufEnter * lua require'completion'.on_attach()
+" autocmd BufEnter * lua require'completion'.on_attach()

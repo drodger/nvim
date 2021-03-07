@@ -2,7 +2,7 @@
 let g:mapleader = "\<Space>"
 nnoremap ; :
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <silent> <leader>so :so $MYVIMRC<CR>
 nnoremap <leader>w :w<CR>
 tnoremap <ESC><ESC> <C-\><C-n>
 

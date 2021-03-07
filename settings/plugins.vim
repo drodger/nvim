@@ -36,7 +36,7 @@ Plug 'nvim-treesitter/completion-treesitter'
 Plug 'tami5/sql.nvim'
 
 " Snippets engine
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 " Use the engine in neovim
 " Plug 'honza/vim-snippets'
 Plug 'hrsh7th/vim-vsnip'

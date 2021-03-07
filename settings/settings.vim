@@ -35,11 +35,11 @@ let g:webdevicons_enable = 1
 
 runtime ftplugin/man.vim
 
-" let g:completion_enable_snippet = 'UltiSnips'
-" let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/.config/nvim/snips']
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
-" show diagnostic signs
-let g:lsp_signs_enabled = 1
-let g:lsp_signs_error = {'text': '✗'}
-let g:lsp_signs_warning = {'text': '!'}
-let g:lsp_highlights_enabled = 0
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+

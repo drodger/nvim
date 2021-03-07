@@ -1,5 +1,9 @@
 call plug#begin(stdpath('config') . '/plugins')
 
+" LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+
 " Color schemes
 Plug 'dislabled/panenight.vim'
 Plug 'dracula/vim'
@@ -15,6 +19,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-frecency.nvim'
+Plug 'tami5/sql.nvim' " needed by telescope-freceny
 
 " Git
 " Show git author, last modified date
@@ -24,23 +29,9 @@ Plug 'mhinz/vim-signify'
 " Use git commands
 Plug 'tpope/vim-fugitive'
 
-" LSP
-Plug 'neovim/nvim-lspconfig'
-
-" Code completion
-" Plug 'nvim-lua/completion-nvim'
-Plug 'hrsh7th/nvim-compe'
+" Treesitter syntax highlighter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
-Plug 'nvim-treesitter/completion-treesitter'
-Plug 'tami5/sql.nvim'
-
-" Snippets engine
-" Plug 'SirVer/ultisnips'
-" Use the engine in neovim
-" Plug 'honza/vim-snippets'
-Plug 'hrsh7th/vim-vsnip'
-" Plug 'norcalli/snippets.nvim'
+Plug 'nvim-treesitter/completion-treesitter' " breaks completion
 
 " statusline
 Plug 'beauwilliams/statusline.lua'
@@ -75,3 +66,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
+
+
+command! PU :PlugUpdate
+command! PC :PlugClean
+

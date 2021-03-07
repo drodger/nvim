@@ -66,7 +66,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'editorconfig/editorconfig-vim'
 
 " FZF
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 call plug#end()

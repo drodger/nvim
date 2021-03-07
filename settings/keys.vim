@@ -16,7 +16,8 @@ nnoremap <leader>fb <cmd>Telescope buffers<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 nnoremap <leader>ft <cmd>Telescope git_files<CR>
 " nnoremap <silent> <C-p> :lua require'telescope'.extensions.frecency.frecency()<CR>
-nnoremap <silent> <C-p> :History<CR>
+" nnoremap <silent> <C-p> :History<CR>
+nnoremap <silent><C-p> <cmd>Telescope oldfiles<CR>
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"

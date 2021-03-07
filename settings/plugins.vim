@@ -51,7 +51,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-commentary'
 " Surround blocks of text
 Plug 'tpope/vim-surround'
-" Show trailing whtiespace
+" Show trailing whitespace
 Plug 'ntpeters/vim-better-whitespace'
 " Surround objects with matching things
 Plug 'Raimondi/delimitMate'
@@ -64,6 +64,10 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 " Use editor config for project
 Plug 'editorconfig/editorconfig-vim'
+
+" FZF
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 

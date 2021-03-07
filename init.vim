@@ -3,6 +3,7 @@ source $HOME/.config/nvim/settings/colorscheme.vim
 source $HOME/.config/nvim/settings/settings.vim
 source $HOME/.config/nvim/settings/lsp.vim
 source $HOME/.config/nvim/settings/keys.vim
+source $HOME/.config/nvim/settings/fzf.vim
 source $HOME/.config/nvim/settings/functions.vim
 source $HOME/.config/nvim/settings/vimwiki.vim
 

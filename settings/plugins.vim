@@ -68,6 +68,12 @@ Plug 'editorconfig/editorconfig-vim'
 " FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" Use project directory scope for FZF
+Plug 'airblade/vim-rooter'
+
+" snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 

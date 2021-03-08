@@ -43,3 +43,11 @@ set completeopt=menuone,noinsert,noselect
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
+" Enable completion with snippets
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/snips']
+let g:completion_enable_snippet = 'UltiSnips'
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+

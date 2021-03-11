@@ -16,7 +16,6 @@ nnoremap <leader>fb <cmd>Telescope buffers<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 nnoremap <leader>ft <cmd>Telescope git_files<CR>
 " nnoremap <silent> <C-p> :lua require'telescope'.extensions.frecency.frecency()<CR>
-" nnoremap <silent> <C-p> :History<CR>
 nnoremap <silent><C-p> <cmd>Telescope oldfiles<CR>
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
@@ -35,6 +34,14 @@ nmap <silent> <leader><space> :StripWhitespace<CR>
 " Use alt+ arrow keys to resize windows
 nnoremap <M-Down>  :resize -2<CR>
 nnoremap <M-Up>    :resize +2<CR>
-nnoremap <M-Left>  :vertical resize -2<CR>
-nnoremap <M-Right> :vertical resize +2<CR>
+nnoremap <M-Left>  :vertical resize -5<CR>
+nnoremap <M-Right> :vertical resize +5<CR>
+nnoremap <M-0> :resize 100<CR>
+
+" copy (yank)
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y gg"+yG
+
+inoremap <C-c> <esc>
 

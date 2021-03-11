@@ -8,3 +8,5 @@ pack/
 plugins/
 venv/
 tags
+node_modules/
+

@@ -72,8 +72,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 
 " snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 
 call plug#end()
 

@@ -1,15 +1,20 @@
 call plug#begin(stdpath('config') . '/plugins')
 
 " LSP
+Plug 'sumneko/lua-language-server'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
+Plug 'tjdevries/nlua.nvim'
+Plug 'tjdevries/lsp_extensions.nvim'
 
 " Color schemes
 Plug 'dislabled/panenight.vim'
-Plug 'dracula/vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'gruvbox-community/gruvbox'
 Plug 'morhetz/gruvbox'
 Plug 'patstockwell/vim-monokai-tasty'
-Plug 'sjl/badwolf'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'sainnhe/gruvbox-material'
 
 " Show hex values with color as background
 Plug 'gko/vim-coloresque'
@@ -19,6 +24,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-frecency.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'tami5/sql.nvim' " needed by telescope-freceny
 
 " Git
@@ -28,10 +34,14 @@ Plug 'f-person/git-blame.nvim'
 Plug 'mhinz/vim-signify'
 " Use git commands
 Plug 'tpope/vim-fugitive'
+" git commit browser
+Plug 'junegunn/gv.vim'
+Plug 'tpope/vim-dispatch'
+Plug 'theprimeagen/vim-be-good'
 
 " Treesitter syntax highlighter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/completion-treesitter' " breaks completion
+Plug 'nvim-treesitter/playground'
 
 " statusline
 Plug 'beauwilliams/statusline.lua'
@@ -42,6 +52,10 @@ Plug 'universal-ctags/ctags'
 Plug 'majutsushi/tagbar'
 " Python code formatter
 Plug 'psf/black'
+
+" Rust, go
+Plug 'rust-lang/rust.vim'
+Plug 'tweekmonster/gofmt.vim'
 
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'
@@ -65,15 +79,21 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Use editor config for project
 Plug 'editorconfig/editorconfig-vim'
 
+" Read man pages in neovim
+Plug 'vim-utils/vim-man'
+
 " FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Use project directory scope for FZF
 Plug 'airblade/vim-rooter'
 
-" snippets
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
+" Debugging
+Plug 'puremourning/vimspector'
+
+" Harpoon
+Plug 'theprimeagen/harpoon'
+Plug 'sbdchd/neoformat'
 
 call plug#end()
 

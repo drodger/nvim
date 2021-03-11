@@ -47,10 +47,4 @@ set shortmess+=c
 let g:rooter_patterns = ['.git', 'Makefile']
 autocmd BufEnter * silent! lcd %:p:h
 
-" Enable completion with snippets
-" let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/snips']
-" let g:completion_enable_snippet = 'UltiSnips'
 
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"

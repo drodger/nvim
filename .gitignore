@@ -6,6 +6,7 @@ viminfo
 .init.vim-rplugin~
 pack/
 plugins/
+plugin/
 venv/
 tags
 node_modules/

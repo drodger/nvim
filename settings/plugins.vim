@@ -79,9 +79,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Use editor config for project
 Plug 'editorconfig/editorconfig-vim'
 
-" Read man pages in neovim
-Plug 'vim-utils/vim-man'
-
 " FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'

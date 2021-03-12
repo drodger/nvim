@@ -85,8 +85,6 @@ Plug 'vim-utils/vim-man'
 " FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Use project directory scope for FZF
-Plug 'airblade/vim-rooter'
 
 " Debugging
 Plug 'puremourning/vimspector'

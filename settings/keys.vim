@@ -15,8 +15,12 @@ nnoremap <leader>fg <cmd>Telescope live_grep<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 nnoremap <leader>ft <cmd>Telescope git_files<CR>
-" nnoremap <silent> <C-p> :lua require'telescope'.extensions.frecency.frecency()<CR>
+nnoremap <leader>fs <cmd>Telescope grep_string<CR>
+nnoremap <leader>gc <cmd>Telescope git_commits<CR>
+nnoremap <leader>gb <cmd>Telescope git_branches<CR>
+nnoremap <leader>gs <cmd>Telescope git_status<CR>
 nnoremap <silent><C-p> <cmd>Telescope oldfiles<CR>
+" nnoremap <silent> <C-p> :lua require'telescope'.extensions.frecency.frecency()<CR>
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -29,7 +33,7 @@ nnoremap <C-u> gUaw<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-nmap <silent> <leader><space> :StripWhitespace<CR>
+" nmap <silent> <leader><space> :StripWhitespace<CR>
 
 " Use alt+ arrow keys to resize windows
 nnoremap <M-Down>  :resize -2<CR>

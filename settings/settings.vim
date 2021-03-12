@@ -43,8 +43,9 @@ set completeopt=menuone,noinsert,noselect
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
-" Set vim-rooter pattern
-let g:rooter_patterns = ['.git', 'Makefile']
-autocmd BufEnter * silent! lcd %:p:h
+" autocmd BufEnter * silent! lcd %:p:h
 
+" better whitespace
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
 

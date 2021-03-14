@@ -69,6 +69,7 @@ Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
 " Surround objects with matching things
 Plug 'Raimondi/delimitMate'
+Plug 'tmsvg/pear-tree' " pair parenthesis, etc
 
 " Vimwiki filetype support
 Plug 'vimwiki/vimwiki'
@@ -82,6 +83,7 @@ Plug 'editorconfig/editorconfig-vim'
 " FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'wincent/ferret'
 
 " Debugging
 Plug 'puremourning/vimspector'

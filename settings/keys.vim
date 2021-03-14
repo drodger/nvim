@@ -49,3 +49,5 @@ nnoremap <leader>Y gg"+yG
 
 inoremap <C-c> <esc>
 
+"FZF
+nnoremap <leader>h :History<CR>

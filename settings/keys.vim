@@ -51,3 +51,6 @@ inoremap <C-c> <esc>
 
 "FZF
 nnoremap <leader>h :History<CR>
+
+" Black (because :Awk uses 'Black')
+nnoremap <leader>b <cmd>call black#Black()<CR>

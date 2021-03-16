@@ -51,3 +51,7 @@ let g:strip_whitespace_on_save=1
 
 " use smart pairings
 let g:pear_tree_repeatable_expand = 0
+let g:pear_tree_ft_disabled = ["TelescopePrompt"]
+
+" delimitMate
+let g:delimitMate_expand_cr=2

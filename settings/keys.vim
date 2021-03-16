@@ -10,12 +10,13 @@ map <F3> :nohlsearch<CR>
 nmap <F8> :TagbarToggle<CR>
 
 " Telescope
-nnoremap <leader>ff <cmd>Telescope find_files<CR>
-nnoremap <leader>fg <cmd>Telescope live_grep<CR>
-nnoremap <leader>fb <cmd>Telescope buffers<CR>
-nnoremap <leader>fh <cmd>Telescope help_tags<CR>
-nnoremap <leader>ft <cmd>Telescope git_files<CR>
-nnoremap <leader>fs <cmd>Telescope grep_string<CR>
+nnoremap <leader>tf <cmd>Telescope find_files<CR>
+nnoremap <leader>td <cmd>Telescope file_browser<CR>
+nnoremap <leader>tg <cmd>Telescope live_grep<CR>
+nnoremap <leader>tb <cmd>Telescope buffers<CR>
+nnoremap <leader>th <cmd>Telescope help_tags<CR>
+nnoremap <leader>ts <cmd>Telescope grep_string<CR>
+nnoremap <leader>gf <cmd>Telescope git_files<CR>
 nnoremap <leader>gc <cmd>Telescope git_commits<CR>
 nnoremap <leader>gb <cmd>Telescope git_branches<CR>
 nnoremap <leader>gs <cmd>Telescope git_status<CR>

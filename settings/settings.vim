@@ -35,8 +35,6 @@ let g:webdevicons_enable = 1
 
 runtime ftplugin/man.vim
 
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
 

@@ -3,7 +3,18 @@
 local sumneko_root_path = '/home/derek/compile/lua-language-server'
 local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 
-local on_attach = require'completion'.on_attach
+require'compe'.setup({
+    enabled = true,
+    autocomplete = true,
+    source = {
+        path = true,
+        buffer = true,
+        nvim_lsp = true,
+        nvim_lua = true,
+        tags = true,
+        omni = true,
+    },
+})
 require'lspconfig'.tsserver.setup{ on_attach=on_attach }
 
 -- require'lspconfig'.clangd.setup {

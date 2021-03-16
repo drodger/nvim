@@ -55,3 +55,10 @@ nnoremap <leader>h :History<CR>
 
 " Black (because :Awk uses 'Black')
 nnoremap <leader>b <cmd>call black#Black()<CR>
+
+" mapping for nvim-compe when using delimitMate
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm({ 'keys': "\<Plug>delimitMateCR", 'mode': '' })
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })

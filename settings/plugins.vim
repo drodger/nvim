@@ -79,6 +79,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 " Use editor config for project
 Plug 'editorconfig/editorconfig-vim'
+Plug 'airblade/vim-rooter'
 
 " FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

@@ -1,5 +1,4 @@
 set number
-set autochdir
 set laststatus=2
 set cursorline
 set showmatch
@@ -53,3 +52,7 @@ let g:pear_tree_ft_disabled = ["TelescopePrompt"]
 
 " delimitMate
 let g:delimitMate_expand_cr=2
+
+" vim-rooter
+let g:rooter_patterns = ['.git']
+let g:rooter_change_directory_for_non_project_files = 'current'

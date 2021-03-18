@@ -15,6 +15,7 @@ Plug 'morhetz/gruvbox'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'sainnhe/gruvbox-material'
+Plug 'tanvirtin/nvim-monokai'
 
 " Show hex values with color as background
 Plug 'gko/vim-coloresque'

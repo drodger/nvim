@@ -31,7 +31,8 @@ set termguicolors
 " colorscheme dracula
 " colorscheme gruvbox
 " colorscheme panenight
-colorscheme vim-monokai-tasty
+" colorscheme vim-monokai-tasty
+colorscheme monokai
 
 highlight SignColumn guibg=black
 highlight LineNr guibg=black

@@ -46,6 +46,7 @@ Plug 'nvim-treesitter/playground'
 
 " statusline
 Plug 'beauwilliams/statusline.lua'
+Plug 'akinsho/nvim-bufferline.lua'
 
 " Tags
 Plug 'universal-ctags/ctags'

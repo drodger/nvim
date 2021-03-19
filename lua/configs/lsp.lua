@@ -52,3 +52,4 @@ require'lspconfig'.sumneko_lua.setup {
     },
 }
 
+require'bufferline'.setup{}

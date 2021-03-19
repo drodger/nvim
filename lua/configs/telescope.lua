@@ -50,3 +50,4 @@ end
             --   :h telescope.layout ->
             --   :h telescope.actions
 
+require('telescope').load_extension('ultisnips')

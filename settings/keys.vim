@@ -22,6 +22,7 @@ nnoremap <leader>gb <cmd>Telescope git_branches<CR>
 nnoremap <leader>gs <cmd>Telescope git_status<CR>
 nnoremap <silent><C-p> <cmd>Telescope oldfiles<CR>
 " nnoremap <silent> <C-p> :lua require'telescope'.extensions.frecency.frecency()<CR>
+nnoremap <leader>tu <cmd>Telescope ultisnips ultisnips<CR>
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -65,3 +66,8 @@ inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<C-j>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"

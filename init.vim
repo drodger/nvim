@@ -6,10 +6,6 @@ source $HOME/.config/nvim/settings/fzf.vim
 source $HOME/.config/nvim/settings/functions.vim
 source $HOME/.config/nvim/settings/vimwiki.vim
 
-" lua require("config")
-let g:vim_be_good_log_file = 1
-let g:vim_apm_log = 1
-
 if executable('rg')
     let g:rg_derive_root='true'
 endif

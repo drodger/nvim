@@ -95,6 +95,11 @@ Plug 'puremourning/vimspector'
 Plug 'theprimeagen/harpoon'
 Plug 'sbdchd/neoformat'
 
+" snips
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'fhill2/telescope-ultisnips.nvim'
+
 call plug#end()
 
 

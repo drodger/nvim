@@ -44,9 +44,9 @@ Plug 'theprimeagen/vim-be-good'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
-" statusline
-Plug 'beauwilliams/statusline.lua'
-Plug 'akinsho/nvim-bufferline.lua'
+" statuslines
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Tags
 Plug 'universal-ctags/ctags'

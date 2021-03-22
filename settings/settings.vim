@@ -1,4 +1,4 @@
-set number
+set rnu
 set laststatus=2
 set cursorline
 set showmatch

@@ -29,7 +29,7 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Uppercase word
-nnoremap <C-u> gUaw<CR>
+nnoremap <leader>u gUaw<CR>
 
 " Better tabbing
 vnoremap < <gv

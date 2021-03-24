@@ -32,7 +32,7 @@ Plug 'tami5/sql.nvim' " needed by telescope-freceny
 " Show git author, last modified date
 Plug 'f-person/git-blame.nvim'
 " Show git change symbols in left gutter
-Plug 'mhinz/vim-signify'
+Plug 'lewis6991/gitsigns.nvim'
 " Use git commands
 Plug 'tpope/vim-fugitive'
 " git commit browser
@@ -99,6 +99,9 @@ Plug 'sbdchd/neoformat'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'fhill2/telescope-ultisnips.nvim'
+
+" show indentation
+Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
 
 call plug#end()
 

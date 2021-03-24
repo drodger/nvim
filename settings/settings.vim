@@ -60,3 +60,5 @@ let g:rooter_change_directory_for_non_project_files = 'current'
 " ultisnips
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
 
+" display indentation levels differently
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']

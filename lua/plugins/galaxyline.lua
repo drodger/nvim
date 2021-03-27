@@ -239,7 +239,6 @@ gls.left[10] = {
     highlight = {colors.bright_red, colors.bg1},
   }
 }
-
 gls.right[1] = {
   RightSepNested = {
     provider = function() return sep.right_filled end,
@@ -251,9 +250,8 @@ gls.right[2] = {
     provider = function()
       if not buffer_not_empty() or not wide_enough(70) then return '' end
       local icon = icons[vim.bo.fileformat] or ''
-      return string.format('  %s %s ', icon, vim.bo.fileencoding)
+      return string.format('  %s %s %s', icon, vim.bo.filetype, vim.bo.fileencoding)
     end,
-    highlight = 'GalaxyViModeNested',
   }
 }
 gls.right[3] = {

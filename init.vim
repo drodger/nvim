@@ -15,3 +15,4 @@ let loaded_matchparen = 1
 
 lua require("configs")
 lua require'nvim-treesitter.configs'.setup { highlight={ enable=true }, indent = { enable = true } }
+luafile ~/.config/nvim/lua/plugins/galaxyline.lua

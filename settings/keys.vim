@@ -6,8 +6,8 @@ nmap <silent> <leader>so :so $MYVIMRC<CR>
 nnoremap <leader>w :w<CR>
 tnoremap <ESC><ESC> <C-\><C-n>
 
-map <F3> :nohlsearch<CR>
-nmap <F8> :TagbarToggle<CR>
+map <leader>3 :nohlsearch<CR>
+nmap <leader>8 :TagbarToggle<CR>
 
 " Telescope
 nnoremap <leader>tf <cmd>Telescope find_files<CR>

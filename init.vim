@@ -5,7 +5,6 @@ source $HOME/.config/nvim/settings/keys.vim
 source $HOME/.config/nvim/settings/fzf.vim
 source $HOME/.config/nvim/settings/functions.vim
 source $HOME/.config/nvim/settings/vimwiki.vim
-source $HOME/.config/nvim/settings/airline.vim
 
 if executable('rg')
     let g:rg_derive_root='true'

@@ -71,3 +71,21 @@ vnoremap K :m '<-2<CR>gv=gv
 let g:UltiSnipsExpandTrigger = "<C-j>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" LSP
+nnoremap <leader>gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <leader>K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <leader><c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <leader>ws <cmd>lua vim.lsp.buf.add_workspace_folder()<CR>
+nnoremap <leader>wr <cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>
+nnoremap <leader>wl <cmd>lua print(vim.lsp.buf.list_workspace_folders())<CR>
+nnoremap <leader>D <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <leader>e <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+nnoremap <leader>[d <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <leader>]d <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <leader>q <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
+

@@ -6,8 +6,8 @@ nmap <silent> <leader>so :so $MYVIMRC<CR>
 nnoremap <leader>w :w<CR>
 tnoremap <ESC><ESC> <C-\><C-n>
 
-map <leader>3 :nohlsearch<CR>
 nmap <leader>8 :TagbarToggle<CR>
+nnoremap <Esc> :nohlsearch<CR>
 
 " Telescope
 nnoremap <leader>tf <cmd>Telescope find_files<CR>
@@ -23,6 +23,7 @@ nnoremap <leader>gs <cmd>Telescope git_status<CR>
 nnoremap <silent><C-p> <cmd>Telescope oldfiles<CR>
 " nnoremap <silent> <C-p> :lua require'telescope'.extensions.frecency.frecency()<CR>
 nnoremap <leader>tu <cmd>Telescope ultisnips ultisnips<CR>
+nnoremap <leader>m <cmd>Telescope media_files<CR>
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"

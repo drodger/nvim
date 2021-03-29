@@ -62,3 +62,21 @@ require('gitsigns').setup {
         changedelete = {hl = 'GitGutterChange', text = '~'},
     },
 }
+
+require'nvim-treesitter.configs'.setup {
+  rainbow = {
+    enable = true
+  }
+}
+
+require('telescope').load_extension('media_files')
+require'telescope'.setup {
+  extensions = {
+    media_files = {
+      -- filetypes whitelist
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      filetypes = {"png", "webp", "jpg", "jpeg", "webm", "pdf", "mp4"},
+      find_cmd = "rg" -- find command (defaults to `fd`)
+    }
+  },
+}

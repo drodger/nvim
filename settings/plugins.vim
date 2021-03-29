@@ -27,6 +27,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-frecency.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'tami5/sql.nvim' " needed by telescope-freceny
+Plug 'nvim-telescope/telescope-media-files.nvim'
 
 " Git
 " Show git author, last modified date
@@ -44,7 +45,7 @@ Plug 'theprimeagen/vim-be-good'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
-" statuslines
+" statusline - use galaxyline, because airline is for savages
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 
 " Tags
@@ -66,7 +67,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-commentary'
 " Surround blocks of text
 Plug 'tpope/vim-surround'
-" Show trailing whitespace
+" Remove trailing whitespace
 Plug 'ntpeters/vim-better-whitespace'
 " Surround objects with matching things
 Plug 'Raimondi/delimitMate'
@@ -101,6 +102,8 @@ Plug 'fhill2/telescope-ultisnips.nvim'
 
 " show indentation
 Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
+" different colors for bracket/parens/braces
+Plug 'p00f/nvim-ts-rainbow'
 
 call plug#end()
 

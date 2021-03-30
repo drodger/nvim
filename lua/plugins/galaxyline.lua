@@ -131,20 +131,6 @@ gls.left[1] = {
     separator_highlight = 'GalaxyViModeInv',
   }
 }
-gls.left[2] = {
-  FileIcon = {
-    provider = function()
-      local extention = vim.fn.expand('%:e')
-      local icon, iconhl = devicons.get_icon(extention)
-      if icon == nil then return '' end
-      local fg = vim.fn.synIDattr(vim.fn.hlID(iconhl), 'fg')
-      local _, _, bg = unpack(mode_hl())
-      highlight('GalaxyFileIcon', fg, bg)
-      return ' ' .. icon .. ' '
-    end,
-    condition = buffer_not_empty,
-  }
-}
 gls.left[3] = {
   FileName = {
     provider = function()
@@ -245,22 +231,28 @@ gls.right[1] = {
     highlight = 'GalaxyViModeInvNested',
   }
 }
-gls.right[2] = {
-  FileFormat = {
-    provider = function()
-      if not buffer_not_empty() or not wide_enough(70) then return '' end
-      local icon = icons[vim.bo.fileformat] or ''
-      return string.format('  %s %s %s', icon, vim.bo.filetype, vim.bo.fileencoding)
-    end,
-  }
-}
 gls.right[3] = {
+    FileFormat = {
+        provider = function()
+            local extention = vim.fn.expand('%:e')
+            local file_type_icon, iconhl = devicons.get_icon(extention)
+            if file_type_icon == nil then file_type_icon = '' end
+            local fg = vim.fn.synIDattr(vim.fn.hlID(iconhl), 'fg')
+            local _, _, bg = unpack(mode_hl())
+            highlight('GalaxyFileIcon', fg, bg)
+            if not buffer_not_empty() or not wide_enough(70) then return '' end
+            local icon = icons[vim.bo.fileformat] or ''
+            return string.format('  %s %s %s %s %s %s', vim.bo.fileencoding, sep.right, icon, sep.right, file_type_icon, vim.bo.filetype)
+        end,
+    }
+}
+gls.right[6] = {
   RightSep = {
     provider = function() return sep.right_filled end,
     highlight = 'GalaxyViModeInv',
   }
 }
-gls.right[4] = {
+gls.right[7] = {
   PositionInfo = {
     provider = function()
       if not buffer_not_empty() or not wide_enough(60) then return '' end
@@ -269,7 +261,7 @@ gls.right[4] = {
     highlight = 'GalaxyViMode',
   }
 }
-gls.right[5] = {
+gls.right[8] = {
   PercentInfo = {
     provider = function ()
       if not buffer_not_empty() or not wide_enough(65) then return '' end

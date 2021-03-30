@@ -1,8 +1,7 @@
--- local sumneko_root_path = '/home/theprimeagen/personal/lua-language-server'
--- local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 local sumneko_root_path = '/home/derek/compile/lua-language-server'
 local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 
+local on_attach = require'compe'.on_attach
 require'compe'.setup({
     enabled = true,
     autocomplete = true,
@@ -15,19 +14,19 @@ require'compe'.setup({
         omni = true,
     },
 })
-require'lspconfig'.tsserver.setup{ on_attach=on_attach }
+require'lspconfig'.tsserver.setup({ on_attach=on_attach })
 
 -- require'lspconfig'.clangd.setup {
 --     on_attach = on_attach,
 --     root_dir = function() return vim.loop.cwd() end
 -- }
 
-require'lspconfig'.pyls.setup{ on_attach=on_attach }
+require'lspconfig'.pyls.setup({ on_attach=on_attach })
 -- require'lspconfig'.gopls.setup{ on_attach=on_attach }
-require'lspconfig'.rust_analyzer.setup{ on_attach=on_attach }
-require'lspconfig'.solargraph.setup{ on_attach=on_attach }
+require'lspconfig'.rust_analyzer.setup({ on_attach=on_attach })
+require'lspconfig'.solargraph.setup({ on_attach=on_attach })
 
-require'lspconfig'.sumneko_lua.setup {
+require'lspconfig'.sumneko_lua.setup({
     on_attach = on_attach,
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
     settings = {
@@ -51,9 +50,9 @@ require'lspconfig'.sumneko_lua.setup {
             },
         },
     },
-}
+})
 
-require('gitsigns').setup {
+require('gitsigns').setup({
     signs = {
         add          = {hl = 'GitGutterAdd'   , text = '+'},
         change       = {hl = 'GitGutterChange', text = '~'},
@@ -61,22 +60,12 @@ require('gitsigns').setup {
         topdelete    = {hl = 'GitGutterDelete', text = '‾'},
         changedelete = {hl = 'GitGutterChange', text = '~'},
     },
-}
+})
 
-require'nvim-treesitter.configs'.setup {
+require'nvim-treesitter.configs'.setup({
   rainbow = {
     enable = true
   }
-}
+})
 
-require('telescope').load_extension('media_files')
-require'telescope'.setup {
-  extensions = {
-    media_files = {
-      -- filetypes whitelist
-      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-      filetypes = {"png", "webp", "jpg", "jpeg", "webm", "pdf", "mp4"},
-      find_cmd = "rg" -- find command (defaults to `fd`)
-    }
-  },
-}
+require'harpoon'.setup()

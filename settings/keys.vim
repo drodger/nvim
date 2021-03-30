@@ -29,8 +29,17 @@ nnoremap <leader>m <cmd>Telescope media_files<CR>
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" Uppercase word
-nnoremap <leader>u gUaw<CR>
+" Quickly append semicolon or comma
+imap ;; <Esc>A;<Esc>
+imap ,, <Esc>A,<Esc>
+
+" Toggle quickfix and location lists
+nnoremap <leader><leader>q :call ToggleQuickfixList()<CR>
+nnoremap <leader><leader>l :call ToggleLocationList()<CR>
+
+" Up/Downcase the current word while in insert mode
+inoremap <silent> <C-g>u <Esc>guawea
+inoremap <silent> <C-g>U <Esc>gUawea
 
 " Better tabbing
 vnoremap < <gv
@@ -47,6 +56,8 @@ nnoremap <M-0> :resize 100<CR>
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
+" Yank to end of line
+nnoremap Y y$
 
 inoremap <C-c> <esc>
 
@@ -101,11 +112,3 @@ nnoremap <leader>hl :lua require("harpoon.ui").nav_file(3)<CR>
 nnoremap <leader>h; :lua require("harpoon.ui").nav_file(4)<CR>
 nnoremap <leader>h[ :lua require("harpoon.term").gotoTerminal(1)<CR>
 nnoremap <leader>h] :lua require("harpoon.term").gotoTerminal(2)<CR>
-
-" Quickly append semicolon or comma
-imap ;; <Esc>A;<Esc>
-imap ,, <Esc>A,<Esc>
-
-" Toggle quickfix and location lists
-nnoremap <leader><leader>q :call ToggleQuickfixList()<CR>
-nnoremap <leader><leader>l :call ToggleLocationList()<CR>

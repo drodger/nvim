@@ -21,7 +21,7 @@ nnoremap <leader>gc <cmd>Telescope git_commits<CR>
 nnoremap <leader>gb <cmd>Telescope git_branches<CR>
 nnoremap <leader>gs <cmd>Telescope git_status<CR>
 nnoremap <silent><C-p> <cmd>Telescope oldfiles<CR>
-" nnoremap <silent> <C-p> :lua require'telescope'.extensions.frecency.frecency()<CR>
+nnoremap <leader>tr  :lua require'telescope'.extensions.frecency.frecency()<CR>
 nnoremap <leader>tu <cmd>Telescope ultisnips ultisnips<CR>
 nnoremap <leader>m <cmd>Telescope media_files<CR>
 
@@ -35,8 +35,6 @@ nnoremap <leader>u gUaw<CR>
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
-
-" nmap <silent> <leader><space> :StripWhitespace<CR>
 
 " Use alt+ arrow keys to resize windows
 nnoremap <M-Down>  :resize -2<CR>
@@ -52,11 +50,11 @@ nnoremap <leader>Y gg"+yG
 
 inoremap <C-c> <esc>
 
-"FZF
-nnoremap <leader>h :History<CR>
-
 " Black (because :Awk uses 'Black')
 nnoremap <leader>b <cmd>call black#Black()<CR>
+
+" Sort lines alphabetically
+vnoremap <leader>s :sort<CR>
 
 " mapping for nvim-compe when using delimitMate
 inoremap <silent><expr> <C-Space> compe#complete()
@@ -76,6 +74,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " LSP
 nnoremap <leader>gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <leader><c-]> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <leader>K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <leader><c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
@@ -90,3 +89,23 @@ nnoremap <leader>[d <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <leader>]d <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <leader>q <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
 
+" Harpoon
+nnoremap <C-h> :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <C-m> :lua require("harpoon.mark").toggle_file()<CR>
+nnoremap <leader>ha :lua require("harpoon.mark").add_file()<CR>
+nnoremap <leader>hr :lua require("harpoon.mark").rm_file()<CR>
+nnoremap <leader>hx :lua require("harpoon.mark").clear_all()<CR>
+nnoremap <leader>hj :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <leader>hk :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <leader>hl :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <leader>h; :lua require("harpoon.ui").nav_file(4)<CR>
+nnoremap <leader>h[ :lua require("harpoon.term").gotoTerminal(1)<CR>
+nnoremap <leader>h] :lua require("harpoon.term").gotoTerminal(2)<CR>
+
+" Quickly append semicolon or comma
+imap ;; <Esc>A;<Esc>
+imap ,, <Esc>A,<Esc>
+
+" Toggle quickfix and location lists
+nnoremap <leader><leader>q :call ToggleQuickfixList()<CR>
+nnoremap <leader><leader>l :call ToggleLocationList()<CR>

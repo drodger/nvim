@@ -1,6 +1,3 @@
-" let g:airline_theme = "panenight"
-" let g:airline_theme = "monokai_tasty"
-
 let g:gruvbox_italic=1
 let g:panenight_terminal_italics = 1
 let g:vim_monokai_tasty_italic = 1
@@ -31,8 +28,7 @@ set termguicolors
 " colorscheme dracula
 " colorscheme gruvbox
 " colorscheme panenight
-" colorscheme vim-monokai-tasty
-colorscheme monokai
+colorscheme vim-monokai-tasty
 
 highlight SignColumn guibg=black
 highlight LineNr guibg=black

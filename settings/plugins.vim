@@ -8,6 +8,7 @@ Plug 'tjdevries/nlua.nvim'
 Plug 'tjdevries/lsp_extensions.nvim'
 
 " Color schemes
+Plug 'chriskempson/base16'
 Plug 'dislabled/panenight.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'gruvbox-community/gruvbox'
@@ -48,10 +49,6 @@ Plug 'nvim-treesitter/playground'
 " statusline - use galaxyline, because airline is for savages
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 
-" Tags
-Plug 'universal-ctags/ctags'
-" Display tagbar
-Plug 'majutsushi/tagbar'
 " Python code formatter
 Plug 'psf/black'
 
@@ -83,11 +80,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-rooter'
 
-" FZF
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'wincent/ferret'
-
 " Debugging
 Plug 'puremourning/vimspector'
 
@@ -104,6 +96,9 @@ Plug 'fhill2/telescope-ultisnips.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
 " different colors for bracket/parens/braces
 Plug 'p00f/nvim-ts-rainbow'
+
+Plug 'milkypostman/vim-togglelist'
+
 
 call plug#end()
 

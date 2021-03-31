@@ -9,7 +9,9 @@ tnoremap <ESC><ESC> <C-\><C-n>
 nnoremap <Esc> :nohlsearch<CR>
 
 " Telescope
-nnoremap <leader>tf <cmd>Telescope find_files<CR>
+nnoremap <leader>tf <cmd>lua require('configs.telescope').find_files()<CR>
+nnoremap <leader>tdf <cmd>lua require('configs.telescope').search_dotfiles()<CR>
+nnoremap <leader>tc <cmd>lua require('configs.telescope').colors()<CR>
 nnoremap <leader>td <cmd>Telescope file_browser<CR>
 nnoremap <leader>tg <cmd>Telescope live_grep<CR>
 nnoremap <leader>tb <cmd>Telescope buffers<CR>

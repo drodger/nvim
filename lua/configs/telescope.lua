@@ -15,9 +15,9 @@ telescope.setup {
         prompt_prefix = ' > ',
         color_devicons = true,
 
-        -- file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
-        -- grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
-        -- qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
+        file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
+        grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
+        qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
 
         mappings = {
             i = {
@@ -72,19 +72,19 @@ telescope.setup {
 -- })
 local function generateOpts(opts)
   local common_opts = {
-    layout_strategy = "center",
-    sorting_strategy = "ascending",
-    results_title = false,
-    preview_title = "Premiew",
-    previewer = false,
-    width = 80,
-    results_height = 15,
-    borderchars = {
-      {"─", "│", "─", "│", "╭", "╮", "╯", "╰"},
-      prompt = {"─", "│", " ", "│", "╭", "╮", "│", "│"},
-      results = {"─", "│", "─", "│", "├", "┤", "╯", "╰"},
-      preview = {"─", "│", "─", "│", "╭", "╮", "╯", "╰"}
-    }
+    -- layout_strategy = "center",
+    -- sorting_strategy = "ascending",
+    -- results_title = false,
+    preview_title = "Just look at it",
+    -- previewer = true,
+    -- width = 80,
+    -- results_height = 15,
+    -- borderchars = {
+    --   {"─", "│", "─", "│", "╭", "╮", "╯", "╰"},
+    --   prompt = {"─", "│", " ", "│", "╭", "╮", "│", "│"},
+    --   results = {"─", "│", "─", "│", "├", "┤", "╯", "╰"},
+    --   preview = {"─", "│", "─", "│", "╭", "╮", "╯", "╰"}
+    -- }
   }
   return vim.tbl_extend("force", opts, common_opts)
 end

@@ -6,7 +6,6 @@ nmap <silent> <leader>so :so $MYVIMRC<CR>
 nnoremap <leader>w :w<CR>
 tnoremap <ESC><ESC> <C-\><C-n>
 
-nmap <leader>8 :TagbarToggle<CR>
 nnoremap <Esc> :nohlsearch<CR>
 
 " Telescope
@@ -101,7 +100,7 @@ nnoremap <leader>]d <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <leader>q <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
 
 " Harpoon
-nnoremap <C-h> :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <leader>h :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <C-m> :lua require("harpoon.mark").toggle_file()<CR>
 nnoremap <leader>ha :lua require("harpoon.mark").add_file()<CR>
 nnoremap <leader>hr :lua require("harpoon.mark").rm_file()<CR>

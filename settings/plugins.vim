@@ -105,6 +105,13 @@ Plug 'milkypostman/vim-togglelist'
 
 " fast scrolling
 Plug 'karb94/neoscroll.nvim'
+" registers
+Plug 'gennaro-tedesco/nvim-peekup'
+
+" opposite of 'J'
+Plug 'sgur/vim-textobj-parameter'
+Plug 'kana/vim-textobj-user'
+Plug 'AckslD/nvim-revJ.lua'
 
 
 call plug#end()

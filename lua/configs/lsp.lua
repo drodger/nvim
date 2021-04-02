@@ -21,6 +21,13 @@ require'lspconfig'.tsserver.setup({ on_attach=on_attach })
 --     root_dir = function() return vim.loop.cwd() end
 -- }
 
+require("revj").setup{
+    keymaps = {
+        operator = '<Leader>J', -- for operator (+motion)
+        line = '<Leader>j', -- for formatting current line
+        visual = '<Leader>j', -- for formatting visual selection
+    },
+}
 require'lspconfig'.pyls.setup({ on_attach=on_attach })
 -- require'lspconfig'.gopls.setup{ on_attach=on_attach }
 require'lspconfig'.rust_analyzer.setup({ on_attach=on_attach })

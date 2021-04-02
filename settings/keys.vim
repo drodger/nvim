@@ -46,6 +46,14 @@ inoremap <silent> <C-g>U <Esc>gUawea
 vnoremap < <gv
 vnoremap > >gv
 
+" increment numbers
+nmap <C-a> <Plug>(dial-increment)
+nmap <C-x> <Plug>(dial-decrement)
+vmap <C-a> <Plug>(dial-increment)
+vmap <C-x> <Plug>(dial-decrement)
+vmap g<C-a> <Plug>(dial-increment-additional)
+vmap g<C-x> <Plug>(dial-decrement-additional)
+
 " Use alt+ arrow keys to resize windows
 nnoremap <M-Down>  :resize -2<CR>
 nnoremap <M-Up>    :resize +2<CR>

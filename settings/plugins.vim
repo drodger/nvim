@@ -113,6 +113,8 @@ Plug 'sgur/vim-textobj-parameter'
 Plug 'kana/vim-textobj-user'
 Plug 'AckslD/nvim-revJ.lua'
 
+" Inc/Dec numbers
+Plug 'monaqa/dial.nvim'
 
 call plug#end()
 

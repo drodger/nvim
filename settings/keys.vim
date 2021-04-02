@@ -68,12 +68,15 @@ nnoremap <leader>b <cmd>call black#Black()<CR>
 " Sort lines alphabetically
 vnoremap <leader>s :sort<CR>
 
+" bufferline
+nnoremap <silent> bl :BufferLinePick<CR>
+
 " mapping for nvim-compe when using delimitMate
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm({ 'keys': "\<Plug>delimitMateCR", 'mode': '' })
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+" inoremap <silent><expr> <C-Space> compe#complete()
+" inoremap <silent><expr> <CR>      compe#confirm({ 'keys': "\<Plug>delimitMateCR", 'mode': '' })
+" inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+" inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+" inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -103,13 +106,18 @@ nnoremap <leader>q <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
 
 " Harpoon
 nnoremap <leader>h :lua require("harpoon.ui").toggle_quick_menu()<CR>
-nnoremap <C-m> :lua require("harpoon.mark").toggle_file()<CR>
+nnoremap <leader>ht :lua require("harpoon.mark").toggle_file()<CR>
 nnoremap <leader>ha :lua require("harpoon.mark").add_file()<CR>
 nnoremap <leader>hr :lua require("harpoon.mark").rm_file()<CR>
 nnoremap <leader>hx :lua require("harpoon.mark").clear_all()<CR>
-nnoremap <leader>hj :lua require("harpoon.ui").nav_file(1)<CR>
-nnoremap <leader>hk :lua require("harpoon.ui").nav_file(2)<CR>
-nnoremap <leader>hl :lua require("harpoon.ui").nav_file(3)<CR>
-nnoremap <leader>h; :lua require("harpoon.ui").nav_file(4)<CR>
+nnoremap <leader>1 :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <leader>2 :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <leader>3 :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <leader>4 :lua require("harpoon.ui").nav_file(4)<CR>
+nnoremap <leader>5 :lua require("harpoon.ui").nav_file(5)<CR>
+nnoremap <leader>6 :lua require("harpoon.ui").nav_file(6)<CR>
+nnoremap <leader>7 :lua require("harpoon.ui").nav_file(7)<CR>
+nnoremap <leader>8 :lua require("harpoon.ui").nav_file(8)<CR>
+nnoremap <leader>9 :lua require("harpoon.ui").nav_file(9)<CR>
 nnoremap <leader>h[ :lua require("harpoon.term").gotoTerminal(1)<CR>
 nnoremap <leader>h] :lua require("harpoon.term").gotoTerminal(2)<CR>

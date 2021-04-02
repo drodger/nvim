@@ -48,6 +48,7 @@ Plug 'nvim-treesitter/playground'
 
 " statusline - use galaxyline, because airline is for savages
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'akinsho/nvim-bufferline.lua'
 
 " Python code formatter
 Plug 'psf/black'
@@ -73,8 +74,10 @@ Plug 'tmsvg/pear-tree' " pair parenthesis, etc
 " Vimwiki filetype support
 Plug 'vimwiki/vimwiki'
 
+
 " Show icons for file types
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'onsails/lspkind-nvim'
 
 " Use editor config for project
 Plug 'editorconfig/editorconfig-vim'
@@ -82,6 +85,7 @@ Plug 'airblade/vim-rooter'
 
 " Debugging
 Plug 'puremourning/vimspector'
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 
 " Harpoon
 Plug 'theprimeagen/harpoon'
@@ -98,6 +102,9 @@ Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
 Plug 'p00f/nvim-ts-rainbow'
 
 Plug 'milkypostman/vim-togglelist'
+
+" fast scrolling
+Plug 'karb94/neoscroll.nvim'
 
 
 call plug#end()

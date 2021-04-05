@@ -58,7 +58,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'tweekmonster/gofmt.vim'
 
 " Tmux
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'numToStr/Navigator.nvim'
 
 " Work with blocks of text better
 " Use gc to block out comments

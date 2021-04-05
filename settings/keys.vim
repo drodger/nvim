@@ -94,24 +94,6 @@ let g:UltiSnipsExpandTrigger = "<C-j>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-" LSP
-nnoremap <leader>gD <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <leader><c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <leader>K <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <leader><c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <leader>ws <cmd>lua vim.lsp.buf.add_workspace_folder()<CR>
-nnoremap <leader>wr <cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>
-nnoremap <leader>wl <cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>
-nnoremap <leader>D <cmd>lua vim.lsp.buf.type_definition()<CR>
-nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <leader>e <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
-nnoremap <leader>[d <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <leader>]d <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <leader>q <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
-
 " Harpoon
 nnoremap <leader>h :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <leader>ht :lua require("harpoon.mark").toggle_file()<CR>
@@ -122,13 +104,13 @@ nnoremap <leader>mj :lua require("harpoon.mark").set_current_at(1)<CR>
 nnoremap <leader>mk :lua require("harpoon.mark").set_current_at(2)<CR>
 nnoremap <leader>ml :lua require("harpoon.mark").set_current_at(3)<CR>
 nnoremap <leader>m; :lua require("harpoon.mark").set_current_at(4)<CR>
-nnoremap <leader>j :lua require("harpoon.ui").nav_file(1)<CR>
-nnoremap <leader>k :lua require("harpoon.ui").nav_file(2)<CR>
-nnoremap <leader>l :lua require("harpoon.ui").nav_file(3)<CR>
-nnoremap <leader>; :lua require("harpoon.ui").nav_file(4)<CR>
-nnoremap <leader>a :lua require("harpoon.mark").rm_file(1)<CR>
-nnoremap <leader>s :lua require("harpoon.mark").rm_file(2)<CR>
-nnoremap <leader>d :lua require("harpoon.mark").rm_file(3)<CR>
-nnoremap <leader>f :lua require("harpoon.mark").rm_file(4)<CR>
+nnoremap <leader>hj :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <leader>hk :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <leader>hl :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <leader>h; :lua require("harpoon.ui").nav_file(4)<CR>
+nnoremap <leader>ha :lua require("harpoon.mark").rm_file(1)<CR>
+nnoremap <leader>hs :lua require("harpoon.mark").rm_file(2)<CR>
+nnoremap <leader>hd :lua require("harpoon.mark").rm_file(3)<CR>
+nnoremap <leader>hf :lua require("harpoon.mark").rm_file(4)<CR>
 nnoremap <leader>h[ :lua require("harpoon.term").gotoTerminal(1)<CR>
 nnoremap <leader>h] :lua require("harpoon.term").gotoTerminal(2)<CR>

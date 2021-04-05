@@ -1,7 +1,37 @@
 local sumneko_root_path = '/home/derek/compile/lua-language-server'
 local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 
-local on_attach = require'compe'.on_attach
+local function lsp_map(mode, key_map, cmd)
+    vim.api.nvim_buf_set_keymap(0, mode, key_map, cmd, {noremap=true})
+end
+
+local function default_on_attach(client)
+    print("Attaching to " .. client.name)
+
+    lsp_map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
+    lsp_map('n', '<leader>gD', ':lua vim.lsp.buf.declaration()<CR>')
+    lsp_map('n', '<leader><c-]>',  ':lua vim.lsp.buf.definition()<CR>')
+    lsp_map('n', '<leader>K',  ':lua vim.lsp.buf.hover()<CR>')
+    lsp_map('n', '<leader>gi',  ':lua vim.lsp.buf.implementation()<CR>')
+    lsp_map('n', '<leader><c-k>',  ':lua vim.lsp.buf.signature_help()<CR>')
+    lsp_map('n', '<leader>af',  ':lua vim.lsp.buf.code_action()<CR>')
+    lsp_map('n', '<leader>ws',  ':lua vim.lsp.buf.add_workspace_folder()<CR>')
+    lsp_map('n', '<leader>wr',  ':lua vim.lsp.buf.remove_workspace_folder()<CR>')
+    lsp_map('n', '<leader>wl',  ':lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>')
+    lsp_map('n', '<leader>D',  ':lua vim.lsp.buf.type_definition()<CR>')
+    lsp_map('n', '<leader>rn',  ':lua vim.lsp.buf.rename()<CR>')
+    lsp_map('n', '<leader>gr',  ':lua vim.lsp.buf.references()<CR>')
+    lsp_map('n', '<leader>e',  ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
+    lsp_map('n', '<leader>[d',  ':lua vim.lsp.diagnostic.goto_prev()<CR>')
+    lsp_map('n', '<leader>]d',  ':lua vim.lsp.diagnostic.goto_next()<CR>')
+    lsp_map('n', '<leader>q',  ':lua vim.lsp.diagnostic.set_loclist()<CR>')
+end
+
+local default_config = {
+    on_attach = default_on_attach
+}
+
+-- local on_attach = require'compe'.on_attach
 require'compe'.setup({
     enabled = true,
     autocomplete = true,
@@ -14,10 +44,10 @@ require'compe'.setup({
         omni = true,
     },
 })
-require'lspconfig'.tsserver.setup({ on_attach=on_attach })
+require'lspconfig'.tsserver.setup(default_config)
 
 -- require'lspconfig'.clangd.setup {
---     on_attach = on_attach,
+--     default_config,
 --     root_dir = function() return vim.loop.cwd() end
 -- }
 
@@ -28,13 +58,13 @@ require("revj").setup{
         visual = '<Leader>j', -- for formatting visual selection
     },
 }
-require'lspconfig'.pyls.setup({ on_attach=on_attach })
--- require'lspconfig'.gopls.setup{ on_attach=on_attach }
-require'lspconfig'.rust_analyzer.setup({ on_attach=on_attach })
-require'lspconfig'.solargraph.setup({ on_attach=on_attach })
+require'lspconfig'.pyls.setup(default_config)
+-- require'lspconfig'.gopls.setup(default_config)
+require'lspconfig'.rust_analyzer.setup(default_config)
+require'lspconfig'.solargraph.setup(default_config)
 
 require'lspconfig'.sumneko_lua.setup({
-    on_attach = on_attach,
+    default_config,
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
     settings = {
         Lua = {

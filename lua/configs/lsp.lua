@@ -9,22 +9,14 @@ end
 local function default_on_attach(client)
     print("Attaching to " .. client.name)
 
-    lsp_map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
-    lsp_map('n', '<leader>gD', ':lua vim.lsp.buf.declaration()<CR>')
     lsp_map('n', '<C-]>',  ':lua vim.lsp.buf.definition()<CR>')
     lsp_map('n', '<leader>K',  ':lua vim.lsp.buf.hover()<CR>')
-    lsp_map('n', '<leader>gi',  ':lua vim.lsp.buf.implementation()<CR>')
     lsp_map('n', '<leader><C-k>',  ':lua vim.lsp.buf.signature_help()<CR>')
-    lsp_map('n', '<leader>af',  ':lua vim.lsp.buf.code_action()<CR>')
-    lsp_map('n', '<leader>ws',  ':lua vim.lsp.buf.add_workspace_folder()<CR>')
+    lsp_map('n', '<leader>wa',  ':lua vim.lsp.buf.add_workspace_folder()<CR>')
     lsp_map('n', '<leader>wr',  ':lua vim.lsp.buf.remove_workspace_folder()<CR>')
     lsp_map('n', '<leader>wl',  ':lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>')
-    lsp_map('n', '<leader>D',  ':lua vim.lsp.buf.type_definition()<CR>')
     lsp_map('n', '<leader>rn',  ':lua vim.lsp.buf.rename()<CR>')
     lsp_map('n', '<leader>gr',  ':lua vim.lsp.buf.references()<CR>')
-    lsp_map('n', '<leader>e',  ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
-    lsp_map('n', '<leader>[d',  ':lua vim.lsp.diagnostic.goto_prev()<CR>')
-    lsp_map('n', '<leader>]d',  ':lua vim.lsp.diagnostic.goto_next()<CR>')
     lsp_map('n', '<leader>q',  ':lua vim.lsp.diagnostic.set_loclist()<CR>')
 end
 
@@ -47,10 +39,10 @@ require'compe'.setup({
 })
 lspconfig.tsserver.setup(default_config)
 
--- lspconfig.clangd.setup {
---     default_config,
---     root_dir = function() return vim.loop.cwd() end
--- }
+lspconfig.clangd.setup {
+    default_config,
+    root_dir = lspconfig.util.root_pattern('.git') or vim.loop.os_homedir(),
+}
 
 require("revj").setup{
     keymaps = {

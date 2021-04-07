@@ -1,5 +1,6 @@
 local sumneko_root_path = '/home/derek/compile/lua-language-server'
 local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
+local lspconfig = require'lspconfig'
 
 local function lsp_map(mode, key_map, cmd)
     vim.api.nvim_buf_set_keymap(0, mode, key_map, cmd, {noremap=true})
@@ -44,9 +45,9 @@ require'compe'.setup({
         omni = true,
     },
 })
-require'lspconfig'.tsserver.setup(default_config)
+lspconfig.tsserver.setup(default_config)
 
--- require'lspconfig'.clangd.setup {
+-- lspconfig.clangd.setup {
 --     default_config,
 --     root_dir = function() return vim.loop.cwd() end
 -- }
@@ -58,12 +59,25 @@ require("revj").setup{
         visual = '<Leader>j', -- for formatting visual selection
     },
 }
-require'lspconfig'.pyls.setup(default_config)
--- require'lspconfig'.gopls.setup(default_config)
-require'lspconfig'.rust_analyzer.setup(default_config)
-require'lspconfig'.solargraph.setup(default_config)
+lspconfig.pyls.setup({
+    root_dir = lspconfig.util.root_pattern('.git') or vim.loop.os_homedir(),
+    on_attach = default_on_attach,
+    settings = {
+        pyls = {
+            plugins = {
+                pycodestyle = { enabled = false },
+                pyflakes = { enabled = false },
+                pylint = { enabled = false },
+                flake8 = { enabled = true },
+            }
+        },
+    },
+})
+-- lspconfig.gopls.setup(default_config)
+lspconfig.rust_analyzer.setup(default_config)
+lspconfig.solargraph.setup(default_config)
 
-require'lspconfig'.sumneko_lua.setup({
+lspconfig.sumneko_lua.setup({
     default_config,
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
     settings = {

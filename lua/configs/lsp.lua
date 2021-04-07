@@ -11,10 +11,10 @@ local function default_on_attach(client)
 
     lsp_map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
     lsp_map('n', '<leader>gD', ':lua vim.lsp.buf.declaration()<CR>')
-    lsp_map('n', '<leader><c-]>',  ':lua vim.lsp.buf.definition()<CR>')
+    lsp_map('n', '<C-]>',  ':lua vim.lsp.buf.definition()<CR>')
     lsp_map('n', '<leader>K',  ':lua vim.lsp.buf.hover()<CR>')
     lsp_map('n', '<leader>gi',  ':lua vim.lsp.buf.implementation()<CR>')
-    lsp_map('n', '<leader><c-k>',  ':lua vim.lsp.buf.signature_help()<CR>')
+    lsp_map('n', '<leader><C-k>',  ':lua vim.lsp.buf.signature_help()<CR>')
     lsp_map('n', '<leader>af',  ':lua vim.lsp.buf.code_action()<CR>')
     lsp_map('n', '<leader>ws',  ':lua vim.lsp.buf.add_workspace_folder()<CR>')
     lsp_map('n', '<leader>wr',  ':lua vim.lsp.buf.remove_workspace_folder()<CR>')
@@ -41,7 +41,7 @@ require'compe'.setup({
         buffer = true,
         nvim_lsp = true,
         nvim_lua = true,
-        tags = true,
+        tags = false,
         omni = true,
     },
 })

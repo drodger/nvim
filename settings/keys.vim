@@ -31,16 +31,16 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Quickly append semicolon or comma
-imap ;; <Esc>A;<Esc>
-imap ,, <Esc>A,<Esc>
+nnoremap ;; <Esc>A;<Esc>
+nnoremap ,, <Esc>A,<Esc>
 
 " Toggle quickfix and location lists
 nnoremap <leader><leader>q :call ToggleQuickfixList()<CR>
 nnoremap <leader><leader>l :call ToggleLocationList()<CR>
 
 " Up/Downcase the current word while in insert mode
-inoremap <silent> <C-g>u <Esc>guawea
-inoremap <silent> <C-g>U <Esc>gUawea
+nnoremap <silent> <C-g>u <Esc>guawea
+nnoremap <silent> <C-g>U <Esc>gUawea
 
 " Better tabbing
 vnoremap < <gv
@@ -78,13 +78,6 @@ vnoremap <leader>s :sort<CR>
 
 " bufferline
 nnoremap <silent> bl :BufferLinePick<CR>
-
-" mapping for nvim-compe when using delimitMate
-" inoremap <silent><expr> <C-Space> compe#complete()
-" inoremap <silent><expr> <CR>      compe#confirm({ 'keys': "\<Plug>delimitMateCR", 'mode': '' })
-" inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-" inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-" inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv

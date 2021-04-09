@@ -34,57 +34,14 @@ telescope.setup {
             override_file_sorter = true,
         },
         media_files = {
-            -- filetypes whitelist
-            -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
             filetypes = {"png", "webp", "jpg", "jpeg", "webm", "pdf", "mp4"},
             find_cmd = "rg" -- find command (defaults to `fd`)
         }
     }
 }
-
-
-
-            -- map(mode, key, lua function to call)
-            --
-            -- good place to look: telescope.actions (init.lua)
-            -- lua function to call:  (gets bufnr, not necessarily needed)
-            --   require('telescope.actions.state').get_selected_entry(bufnr)
-            --   Actions just take the bufnr and give out information
-            --   require('telescope.actions').close(bufnr)
-            --
-            --   check out telescope.actions for _all the available_ supported
-            --   actions.
-            --
-            --   :h telescope.setup ->
-            --   :h telescope.builtin ->
-            --   :h telescope.layout ->
-            --   :h telescope.actions
-
--- telescope.setup({
---   extensions = {
---     media_files = {
---       -- filetypes whitelist
---       -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
---       filetypes = {"png", "webp", "jpg", "jpeg", "webm", "pdf", "mp4"},
---       find_cmd = "rg" -- find command (defaults to `fd`)
---     }
---   },
--- })
 local function generateOpts(opts)
   local common_opts = {
-    -- layout_strategy = "center",
-    -- sorting_strategy = "ascending",
-    -- results_title = false,
     preview_title = "Just look at it",
-    -- previewer = true,
-    -- width = 80,
-    -- results_height = 15,
-    -- borderchars = {
-    --   {"─", "│", "─", "│", "╭", "╮", "╯", "╰"},
-    --   prompt = {"─", "│", " ", "│", "╭", "╮", "│", "│"},
-    --   results = {"─", "│", "─", "│", "├", "┤", "╯", "╰"},
-    --   preview = {"─", "│", "─", "│", "╭", "╮", "╯", "╰"}
-    -- }
   }
   return vim.tbl_extend("force", opts, common_opts)
 end

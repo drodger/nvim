@@ -24,8 +24,8 @@ local default_config = {
     on_attach = default_on_attach
 }
 
--- local on_attach = require'compe'.on_attach
 require'compe'.setup({
+    on_attach = default_on_attach,
     enabled = true,
     autocomplete = true,
     source = {

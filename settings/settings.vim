@@ -54,8 +54,8 @@ let g:pear_tree_ft_disabled = ["TelescopePrompt"]
 let g:delimitMate_expand_cr=2
 
 " vim-rooter
-let g:rooter_patterns = ['.git']
-let g:rooter_change_directory_for_non_project_files = 'current'
+" let g:rooter_patterns = ['.git']
+" let g:rooter_change_directory_for_non_project_files = 'current'
 
 " ultisnips
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]

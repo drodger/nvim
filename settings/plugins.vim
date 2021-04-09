@@ -35,8 +35,6 @@ Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'f-person/git-blame.nvim'
 " Show git change symbols in left gutter
 Plug 'lewis6991/gitsigns.nvim'
-" Use git commands
-Plug 'tpope/vim-fugitive'
 " git commit browser
 Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-dispatch'
@@ -61,6 +59,7 @@ Plug 'tweekmonster/gofmt.vim'
 Plug 'numToStr/Navigator.nvim'
 
 " Work with blocks of text better
+
 " Use gc to block out comments
 Plug 'tpope/vim-commentary'
 " Surround blocks of text
@@ -69,7 +68,8 @@ Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
 " Surround objects with matching things
 Plug 'Raimondi/delimitMate'
-Plug 'tmsvg/pear-tree' " pair parenthesis, etc
+" pair parenthesis, etc
+Plug 'tmsvg/pear-tree'
 
 " Vimwiki filetype support
 Plug 'vimwiki/vimwiki'
@@ -81,7 +81,6 @@ Plug 'onsails/lspkind-nvim'
 
 " Use editor config for project
 Plug 'editorconfig/editorconfig-vim'
-Plug 'airblade/vim-rooter'
 
 " Debugging
 Plug 'puremourning/vimspector'

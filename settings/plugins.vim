@@ -39,6 +39,8 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'theprimeagen/vim-be-good'
+" View commit message for line of code
+Plug 'rhysd/git-messenger.vim'
 
 " Treesitter syntax highlighter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

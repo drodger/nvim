@@ -118,7 +118,9 @@ Plug 'AckslD/nvim-revJ.lua'
 Plug 'monaqa/dial.nvim'
 
 " spell check
-Plug 'lewis6991/spellsitter.nvim'
+" Wait until this is fixed:
+" https://github.com/lewis6991/spellsitter.nvim/issues/2
+" Plug 'lewis6991/spellsitter.nvim'
 
 call plug#end()
 

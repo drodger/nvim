@@ -106,9 +106,11 @@ require('gitsigns').setup({
 })
 
 require'nvim-treesitter.configs'.setup({
-  rainbow = {
-    enable = true
-  }
+    highlight={ enable = true },
+    indent={ enable = true },
+    rainbow = {
+        enable = true
+    }
 })
 
 require'harpoon'.setup()
@@ -190,13 +192,13 @@ require'bufferline'.setup{
   }
 }
 
-require('spellsitter').setup({
-    default_config,
-    hl = 'SpellBad',
-    captures = { 'comment' },
-    hunspell_cmd = 'hunspell',
-    hunspell_args = {},
-})
+-- require('spellsitter').setup({
+--     default_config,
+--     hl = 'SpellBad',
+--     captures = { 'comment' },
+--     hunspell_cmd = 'hunspell',
+--     hunspell_args = {},
+-- })
 
 -- Configuration
 require('Navigator').setup({
@@ -213,3 +215,4 @@ map('n', "<A-k>", "<CMD>lua require('Navigator').up()<CR>", opts)
 map('n', "<A-l>", "<CMD>lua require('Navigator').right()<CR>", opts)
 map('n', "<A-j>", "<CMD>lua require('Navigator').down()<CR>", opts)
 map('n', "<A-p>", "<CMD>lua require('Navigator').previous()<CR>", opts)
+

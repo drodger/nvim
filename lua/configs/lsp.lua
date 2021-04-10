@@ -190,6 +190,14 @@ require'bufferline'.setup{
   }
 }
 
+require('spellsitter').setup({
+    default_config,
+    hl = 'SpellBad',
+    captures = { 'comment' },
+    hunspell_cmd = 'hunspell',
+    hunspell_args = {},
+})
+
 -- Configuration
 require('Navigator').setup({
     auto_save = 'current',

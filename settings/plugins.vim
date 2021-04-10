@@ -117,6 +117,9 @@ Plug 'AckslD/nvim-revJ.lua'
 " Inc/Dec numbers
 Plug 'monaqa/dial.nvim'
 
+" spell check
+Plug 'lewis6991/spellsitter.nvim'
+
 call plug#end()
 
 

@@ -70,8 +70,9 @@ nnoremap Y y$
 
 inoremap <C-c> <esc>
 
-" Black (because :Awk uses 'Black')
-nnoremap <leader>b <cmd>call black#Black()<CR>
+" Black (because :Ack uses 'Black')
+" nnoremap <leader>b <cmd>call black#Black()<CR>
+nnoremap <leader>b <cmd>:Black<CR>
 
 " Sort lines alphabetically
 vnoremap <leader>s :sort<CR>

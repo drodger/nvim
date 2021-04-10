@@ -216,3 +216,15 @@ map('n', "<A-l>", "<CMD>lua require('Navigator').right()<CR>", opts)
 map('n', "<A-j>", "<CMD>lua require('Navigator').down()<CR>", opts)
 map('n', "<A-p>", "<CMD>lua require('Navigator').previous()<CR>", opts)
 
+-- neoscroll
+require('neoscroll').setup({
+    default_config,
+    mappings = {
+        '<c-u>', '<C-d>', '<C-b>', '<C-f>',
+        '<C-y>', '<C-e>', 'zt', 'zz', 'zb'
+    },
+    hide_cursor = true,
+    step_eof = true,
+    respect_scrolloff = false,
+    cursor_scrolls_alone = true,
+})

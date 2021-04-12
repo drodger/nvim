@@ -68,8 +68,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 " Remove trailing whitespace
 Plug 'ntpeters/vim-better-whitespace'
-" Surround objects with matching things
-Plug 'Raimondi/delimitMate'
 " pair parenthesis, etc
 Plug 'tmsvg/pear-tree'
 

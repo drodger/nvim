@@ -98,7 +98,7 @@ Plug 'fhill2/telescope-ultisnips.nvim'
 " show indentation
 Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
 " different colors for bracket/parens/braces
-Plug 'p00f/nvim-ts-rainbow'
+" Plug 'p00f/nvim-ts-rainbow'
 
 Plug 'milkypostman/vim-togglelist'
 

@@ -28,6 +28,7 @@ require'compe'.setup({
     on_attach = default_on_attach,
     enabled = true,
     autocomplete = true,
+    preselect = 'always',
     source = {
         path = true,
         buffer = true,
@@ -35,6 +36,7 @@ require'compe'.setup({
         nvim_lua = true,
         tags = false,
         omni = true,
+        ultisnips = true,
     },
 })
 lspconfig.tsserver.setup(default_config)
@@ -53,7 +55,7 @@ require("revj").setup{
 }
 lspconfig.pyls.setup({
     root_dir = lspconfig.util.root_pattern('.git') or vim.loop.os_homedir(),
-    on_attach = default_on_attach,
+    default_config,
     settings = {
         pyls = {
             plugins = {

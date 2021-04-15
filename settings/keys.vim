@@ -38,6 +38,8 @@ nnoremap ,, <Esc>A,<Esc>
 nnoremap <leader><leader>q :call ToggleQuickfixList()<CR>
 nnoremap <leader><leader>l :call ToggleLocationList()<CR>
 
+nnoremap <leader><leader>w :StripWhitespace<CR>
+
 " Up/Downcase the current word while in insert mode
 nnoremap <silent> <C-g>u <Esc>guawea
 nnoremap <silent> <C-g>U <Esc>gUawea
@@ -70,15 +72,15 @@ nnoremap Y y$
 
 inoremap <C-c> <esc>
 
-" Black (because :Ack uses 'Black')
-" nnoremap <leader>b <cmd>call black#Black()<CR>
+" Black (because python-mode and Ack uses 'Black')
+" nnoremap <leader>fb <cmd>call black#Black()<CR>
 nnoremap <leader>b <cmd>:Black<CR>
 
 " Sort lines alphabetically
 vnoremap <leader>s :sort<CR>
 
 " bufferline
-nnoremap <silent> bl :BufferLinePick<CR>
+nnoremap <leader>bl :BufferLinePick<CR>
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv

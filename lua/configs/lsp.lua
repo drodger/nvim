@@ -20,15 +20,10 @@ local function default_on_attach(client)
     lsp_map('n', '<leader>q',  ':lua vim.lsp.diagnostic.set_loclist()<CR>')
 end
 
-local default_config = {
-    on_attach = default_on_attach
-}
-
 require'compe'.setup({
     on_attach = default_on_attach,
     enabled = true,
     autocomplete = true,
-    preselect = 'always',
     source = {
         path = true,
         buffer = true,
@@ -39,10 +34,13 @@ require'compe'.setup({
         ultisnips = true,
     },
 })
-lspconfig.tsserver.setup(default_config)
+lspconfig.tsserver.setup({
+    on_attach = default_on_attach,
+})
 
 lspconfig.clangd.setup {
-    default_config,
+    on_attach = default_on_attach,
+    -- filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"},
     root_dir = lspconfig.util.root_pattern('.git') or vim.loop.os_homedir(),
 }
 
@@ -55,7 +53,8 @@ require("revj").setup{
 }
 lspconfig.pyls.setup({
     root_dir = lspconfig.util.root_pattern('.git') or vim.loop.os_homedir(),
-    default_config,
+    -- filetype = { "python", "django" },
+    on_attach = default_on_attach,
     settings = {
         pyls = {
             plugins = {
@@ -68,11 +67,15 @@ lspconfig.pyls.setup({
     },
 })
 -- lspconfig.gopls.setup(default_config)
-lspconfig.rust_analyzer.setup(default_config)
-lspconfig.solargraph.setup(default_config)
+lspconfig.rust_analyzer.setup({
+    on_attach = default_on_attach,
+})
+lspconfig.solargraph.setup({
+    on_attach = default_on_attach,
+})
 
 lspconfig.sumneko_lua.setup({
-    default_config,
+    on_attach = default_on_attach,
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
     settings = {
         Lua = {
@@ -220,7 +223,7 @@ map('n', "<A-p>", "<CMD>lua require('Navigator').previous()<CR>", opts)
 
 -- neoscroll
 require('neoscroll').setup({
-    default_config,
+    on_attach = default_on_attach,
     mappings = {
         '<c-u>', '<C-d>', '<C-b>', '<C-f>',
         '<C-y>', '<C-e>', 'zt', 'zz', 'zb'

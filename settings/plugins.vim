@@ -27,6 +27,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-frecency.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+" Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'on': 'make' };
 Plug 'tami5/sql.nvim' " needed by telescope-freceny
 Plug 'nvim-telescope/telescope-media-files.nvim'
 

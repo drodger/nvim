@@ -131,26 +131,26 @@ gls.left[1] = {
     separator_highlight = 'GalaxyViModeInv',
   }
 }
-gls.left[3] = {
-  FileName = {
-    provider = function()
-      if not buffer_not_empty() then return '' end
-      local fname
-      if wide_enough(120) then
-        fname = vim.fn.fnamemodify(vim.fn.expand('%'), ':~:.')
-      else
-        fname = vim.fn.expand '%:t'
-      end
-      if #fname == 0 then return '' end
-      if vim.bo.readonly then fname = fname .. ' ' .. icons.locker end
-      if not vim.bo.modifiable then fname = fname .. ' ' .. icons.not_modifiable end
-      if vim.bo.modified then fname = fname .. ' ' .. icons.pencil end
-      return ' ' .. fname .. ' '
-    end,
-    highlight = 'GalaxyViModeNested',
-    condition = buffer_not_empty,
-  }
-}
+-- gls.left[3] = {
+--   FileName = {
+--     provider = function()
+--       if not buffer_not_empty() then return '' end
+--       local fname
+--       if wide_enough(120) then
+--         fname = vim.fn.fnamemodify(vim.fn.expand('%'), ':~:.')
+--       else
+--         fname = vim.fn.expand '%:t'
+--       end
+--       if #fname == 0 then return '' end
+--       if vim.bo.readonly then fname = fname .. ' ' .. icons.locker end
+--       if not vim.bo.modifiable then fname = fname .. ' ' .. icons.not_modifiable end
+--       if vim.bo.modified then fname = fname .. ' ' .. icons.pencil end
+--       return ' ' .. fname .. ' '
+--     end,
+--     highlight = 'GalaxyViModeNested',
+--     condition = buffer_not_empty,
+--   }
+-- }
 gls.left[4] = {
   LeftSep = {
     provider = function() return sep.left_filled end,
@@ -242,7 +242,8 @@ gls.right[3] = {
             highlight('GalaxyFileIcon', fg, bg)
             if not buffer_not_empty() or not wide_enough(70) then return '' end
             local icon = icons[vim.bo.fileformat] or ''
-            return string.format('  %s %s %s %s %s %s', vim.bo.fileencoding, sep.right, icon, sep.right, file_type_icon, vim.bo.filetype)
+            -- return string.format('  %s %s %s %s %s %s', vim.bo.fileencoding, sep.right, icon, sep.right, file_type_icon, vim.bo.filetype)
+            return string.format('  %s %s', file_type_icon, vim.bo.filetype)
         end,
     }
 }

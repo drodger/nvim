@@ -40,7 +40,7 @@ lspconfig.tsserver.setup({
 
 lspconfig.clangd.setup {
     on_attach = default_on_attach,
-    -- filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"},
+    filetypes = { "c", "cpp" },
     root_dir = lspconfig.util.root_pattern('.git') or vim.loop.os_homedir(),
 }
 
@@ -111,8 +111,15 @@ require('gitsigns').setup({
 })
 
 require'nvim-treesitter.configs'.setup({
+    -- ensure_installed = {
+    --     'bash', 'c', 'clojure', 'comment', 'cpp', 'css', 'go',
+    --     'html', 'javascript', 'json', 'jsonc', 'lua',
+    --     'python', 'regex', 'rust', 'typescript'
+    -- },
     highlight={ enable = true },
-    -- indent={ enable = true },
+    indent = {
+        enable = true,
+    },
     rainbow = {
         enable = true
     }
@@ -121,29 +128,29 @@ require'nvim-treesitter.configs'.setup({
 require'harpoon'.setup()
 
 require('lspkind').init({
-    -- with_text = true,
-    -- symbol_map = {
-    --   Text = '',
-    --   Method = 'ƒ',
-    --   Function = '',
-    --   Constructor = '',
-    --   Variable = '',
-    --   Class = '',
-    --   Interface = 'ﰮ',
-    --   Module = '',
-    --   Property = '',
-    --   Unit = '',
-    --   Value = '',
-    --   Enum = '了',
-    --   Keyword = '',
-    --   Snippet = '﬌',
-    --   Color = '',
-    --   File = '',
-    --   Folder = '',
-    --   EnumMember = '',
-    --   Constant = '',
-    --   Struct = ''
-    -- },
+    with_text = true,
+    symbol_map = {
+      Text = '',
+      Method = 'ƒ',
+      Function = '',
+      Constructor = '',
+      Variable = '',
+      Class = '',
+      Interface = 'ﰮ',
+      Module = '',
+      Property = '',
+      Unit = '',
+      Value = '',
+      Enum = '了',
+      Keyword = '',
+      Snippet = '﬌',
+      Color = '',
+      File = '',
+      Folder = '',
+      EnumMember = '',
+      Constant = '',
+      Struct = ''
+    },
 })
 
 require'bufferline'.setup{
@@ -215,11 +222,10 @@ require('Navigator').setup({
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
-map('n', "<A-h>", "<CMD>lua require('Navigator').left()<CR>", opts)
-map('n', "<A-k>", "<CMD>lua require('Navigator').up()<CR>", opts)
-map('n', "<A-l>", "<CMD>lua require('Navigator').right()<CR>", opts)
-map('n', "<A-j>", "<CMD>lua require('Navigator').down()<CR>", opts)
-map('n', "<A-p>", "<CMD>lua require('Navigator').previous()<CR>", opts)
+map('n', "<C-h>", "<CMD>lua require('Navigator').left()<CR>", opts)
+map('n', "<C-k>", "<CMD>lua require('Navigator').up()<CR>", opts)
+map('n', "<C-l>", "<CMD>lua require('Navigator').right()<CR>", opts)
+map('n', "<C-j>", "<CMD>lua require('Navigator').down()<CR>", opts)
 
 -- neoscroll
 require('neoscroll').setup({

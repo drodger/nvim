@@ -5,14 +5,14 @@ local actions = require('telescope.actions')
 local builtin = require("telescope.builtin")
 local M = {}
 
-telescope.load_extension("fzy_native")
--- telescope.load_extension("fzf")
+-- telescope.load_extension("fzy_native")
+telescope.load_extension("fzf")
 telescope.load_extension('ultisnips')
 telescope.load_extension('media_files')
 
 telescope.setup {
     defaults = {
-        file_sorter = require('telescope.sorters').get_fzy_sorter,
+        -- file_sorter = require('telescope.sorters').get_fzy_sorter,
         prompt_prefix = ' > ',
         color_devicons = true,
 
@@ -30,15 +30,15 @@ telescope.setup {
         }
     },
     extensions = {
-        -- fzf = {
-        --     override_generic_sorter = false,
-        --     override_file_sorter = true,
-        --     case_mode = "smart_case",
-        -- },
-        fzy_native = {
+        fzf = {
             override_generic_sorter = false,
             override_file_sorter = true,
+            case_mode = "smart_case",
         },
+        -- fzy_native = {
+        --     override_generic_sorter = false,
+        --     override_file_sorter = true,
+        -- },
         media_files = {
             filetypes = {"png", "webp", "jpg", "jpeg", "webm", "pdf", "mp4"},
             find_cmd = "rg" -- find command (defaults to `fd`)

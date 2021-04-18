@@ -64,7 +64,7 @@ Plug 'numToStr/Navigator.nvim'
 " Use gcc/gc to block out comments
 Plug 'b3nj5m1n/kommentary'
 " Surround blocks of text
-Plug 'tpope/vim-surround'
+Plug 'blackcauldron7/surround.nvim'
 " Remove trailing whitespace
 Plug 'ntpeters/vim-better-whitespace'
 " pair parenthesis, etc
@@ -97,7 +97,7 @@ Plug 'fhill2/telescope-ultisnips.nvim'
 " show indentation
 Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
 " different colors for bracket/parens/braces
-" Plug 'p00f/nvim-ts-rainbow'
+Plug 'p00f/nvim-ts-rainbow'
 
 Plug 'milkypostman/vim-togglelist'
 

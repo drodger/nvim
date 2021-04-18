@@ -168,7 +168,7 @@ require'bufferline'.setup{
     -- max_prefix_length = 15, -- prefix used when a buffer is deduplicated
     -- tab_size = 18,
     diagnostics = "nvim_lsp",
-    diagnostics_indicator = function(count, level, diagnostics_dict)
+    diagnostics_indicator = function(count, level)
         local icon = level:match("error") and " " or " "
         return " " .. icon .. count
     end
@@ -216,6 +216,10 @@ require'bufferline'.setup{
 require('Navigator').setup({
     auto_save = 'current',
     disable_on_zoom = true
+})
+
+require('surround').setup({
+    on_attach = default_on_attach
 })
 
 -- Keybindings

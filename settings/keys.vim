@@ -22,7 +22,6 @@ nnoremap <leader>gc <cmd>Telescope git_commits<CR>
 nnoremap <leader>gb <cmd>Telescope git_branches<CR>
 nnoremap <leader>gs <cmd>Telescope git_status<CR>
 nnoremap <silent><C-p> <cmd>Telescope oldfiles<CR>
-nnoremap <leader>tr  :lua require'telescope'.extensions.frecency.frecency()<CR>
 nnoremap <leader>tu <cmd>Telescope ultisnips ultisnips<CR>
 nnoremap <leader>m <cmd>Telescope media_files<CR>
 

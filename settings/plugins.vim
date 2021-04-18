@@ -25,11 +25,8 @@ Plug 'gko/vim-coloresque'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-frecency.nvim'
-" Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " RRRRRRRRRAAAAAAAAAAAAAAUUUUUUUUUULLLLLLLLLL
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'on': 'make' }
-Plug 'tami5/sql.nvim' " needed by telescope-freceny
 Plug 'nvim-telescope/telescope-media-files.nvim'
 
 " Git
@@ -64,8 +61,8 @@ Plug 'numToStr/Navigator.nvim'
 
 " Work with blocks of text better
 
-" Use gc to block out comments
-Plug 'tpope/vim-commentary'
+" Use gcc/gc to block out comments
+Plug 'b3nj5m1n/kommentary'
 " Surround blocks of text
 Plug 'tpope/vim-surround'
 " Remove trailing whitespace

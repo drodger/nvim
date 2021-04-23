@@ -77,6 +77,7 @@ Plug 'vimwiki/vimwiki'
 " Show icons for file types
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'onsails/lspkind-nvim'
+Plug 'kyazdani42/nvim-tree.lua'
 
 " Use editor config for project
 Plug 'editorconfig/editorconfig-vim'

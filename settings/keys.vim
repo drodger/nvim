@@ -25,6 +25,11 @@ nnoremap <silent><C-p> <cmd>Telescope oldfiles<CR>
 nnoremap <leader>tu <cmd>Telescope ultisnips ultisnips<CR>
 nnoremap <leader>m <cmd>Telescope media_files<CR>
 
+" NvimTree
+nnoremap <leader>t :NvimTreeToggle<CR>
+nnoremap <leader>tr :NvimTreeRefresh<CR>
+nnoremap <leader>tn :NvimTreeFindFile<CR>
+
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

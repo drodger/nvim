@@ -17,6 +17,7 @@ Plug 'patstockwell/vim-monokai-tasty'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'sainnhe/gruvbox-material'
 Plug 'tanvirtin/nvim-monokai'
+Plug 'tiagovla/tokyodark.nvim'
 
 " Show hex values with color as background
 Plug 'gko/vim-coloresque'
@@ -106,6 +107,8 @@ Plug 'milkypostman/vim-togglelist'
 Plug 'karb94/neoscroll.nvim'
 " registers
 Plug 'gennaro-tedesco/nvim-peekup'
+" quickfix window
+Plug 'kevinhwang91/nvim-bqf'
 
 " opposite of 'J'
 Plug 'sgur/vim-textobj-parameter'

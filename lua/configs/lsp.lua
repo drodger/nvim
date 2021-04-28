@@ -222,6 +222,10 @@ require('surround').setup({
     on_attach = default_on_attach
 })
 
+require('bqf').setup({
+    on_attach = default_on_attach,
+    mappings_style = "surround",
+})
 -- Keybindings
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }

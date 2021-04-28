@@ -12,9 +12,9 @@ nnoremap <Esc> :nohlsearch<CR>
 nnoremap <leader>tf <cmd>lua require('configs.telescope').find_files()<CR>
 nnoremap <leader>tdf <cmd>lua require('configs.telescope').search_dotfiles()<CR>
 nnoremap <leader>tc <cmd>lua require('configs.telescope').colors()<CR>
-nnoremap <leader>td <cmd>Telescope file_browser<CR>
+nnoremap <leader>tb <cmd>Telescope file_browser<CR>
 nnoremap <leader>tg <cmd>Telescope live_grep<CR>
-nnoremap <leader>tb <cmd>Telescope buffers<CR>
+" nnoremap <leader>tb <cmd>Telescope buffers<CR>
 nnoremap <leader>th <cmd>Telescope help_tags<CR>
 nnoremap <leader>ts <cmd>Telescope grep_string<CR>
 nnoremap <leader>gf <cmd>Telescope git_files<CR>
@@ -24,9 +24,11 @@ nnoremap <leader>gs <cmd>Telescope git_status<CR>
 nnoremap <silent><C-p> <cmd>Telescope oldfiles<CR>
 nnoremap <leader>tu <cmd>Telescope ultisnips ultisnips<CR>
 nnoremap <leader>m <cmd>Telescope media_files<CR>
+" nnoremap <leader>td <cmd>lua require('telescope.themes').get_dropdown()<CR>
+" require'telescope.builtin'.lsp_code_actions(require('telescope.themes').get_dropdown())
 
 " NvimTree
-nnoremap <leader>t :NvimTreeToggle<CR>
+nnoremap <leader>tt :NvimTreeToggle<CR>
 nnoremap <leader>tr :NvimTreeRefresh<CR>
 nnoremap <leader>tn :NvimTreeFindFile<CR>
 

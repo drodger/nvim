@@ -26,7 +26,6 @@ Plug 'gko/vim-coloresque'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-" RRRRRRRRRAAAAAAAAAAAAAAUUUUUUUUUULLLLLLLLLL
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'on': 'make' }
 Plug 'nvim-telescope/telescope-media-files.nvim'
 
@@ -87,7 +86,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'puremourning/vimspector'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 
-" Harpoon
+" RRRRRRRRRAAAAAAAAAAAAAAUUUUUUUUUULLLLLLLLLL
 Plug 'theprimeagen/harpoon'
 Plug 'sbdchd/neoformat'
 
@@ -117,6 +116,8 @@ Plug 'AckslD/nvim-revJ.lua'
 
 " Inc/Dec numbers
 Plug 'monaqa/dial.nvim'
+
+Plug 'folke/which-key.nvim'
 
 " spell check
 " Wait until this is fixed:

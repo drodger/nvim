@@ -44,7 +44,7 @@ nnoremap ,, <Esc>A,<Esc>
 nnoremap <leader><leader>q :call ToggleQuickfixList()<CR>
 nnoremap <leader><leader>l :call ToggleLocationList()<CR>
 
-nnoremap <leader><leader>w :StripWhitespace<CR>
+nnoremap <leader>ww :StripWhitespace<CR>
 
 " Up/Downcase the current word while in insert mode
 nnoremap <silent> <C-g>u <Esc>guawea

@@ -66,6 +66,10 @@ lspconfig.pyls.setup({
         },
     },
 })
+
+lspconfig.phpactor.setup({
+    on_attach = default_on_attach,
+})
 -- lspconfig.gopls.setup(default_config)
 lspconfig.rust_analyzer.setup({
     on_attach = default_on_attach,
@@ -227,8 +231,8 @@ require('bqf').setup({
     mappings_style = "surround",
 })
 
-require('which-key').setup({
-    on_attach = default_on_attach,
+require('colorizer').setup({
+
 })
 -- Keybindings
 local map = vim.api.nvim_set_keymap

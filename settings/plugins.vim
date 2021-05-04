@@ -20,7 +20,8 @@ Plug 'tanvirtin/nvim-monokai'
 Plug 'tiagovla/tokyodark.nvim'
 
 " Show hex values with color as background
-Plug 'gko/vim-coloresque'
+" Plug 'gko/vim-coloresque'
+Plug 'norcalli/nvim-colorizer.lua'
 
 " Fuzzy finder
 Plug 'nvim-lua/popup.nvim'
@@ -116,8 +117,6 @@ Plug 'AckslD/nvim-revJ.lua'
 
 " Inc/Dec numbers
 Plug 'monaqa/dial.nvim'
-
-Plug 'folke/which-key.nvim'
 
 " spell check
 " Wait until this is fixed:

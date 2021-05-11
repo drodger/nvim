@@ -54,8 +54,8 @@ Plug 'akinsho/nvim-bufferline.lua'
 Plug 'psf/black'
 
 " Rust, go
-Plug 'rust-lang/rust.vim'
-Plug 'tweekmonster/gofmt.vim'
+" Plug 'rust-lang/rust.vim'
+" Plug 'tweekmonster/gofmt.vim'
 
 " Tmux
 Plug 'numToStr/Navigator.nvim'
@@ -81,7 +81,7 @@ Plug 'onsails/lspkind-nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 
 " Use editor config for project
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
 
 " Debugging
 Plug 'puremourning/vimspector'
@@ -104,16 +104,11 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'milkypostman/vim-togglelist'
 
 " fast scrolling
-Plug 'karb94/neoscroll.nvim'
+" Plug 'karb94/neoscroll.nvim'
 " registers
-Plug 'gennaro-tedesco/nvim-peekup'
+" Plug 'gennaro-tedesco/nvim-peekup'
 " quickfix window
-Plug 'kevinhwang91/nvim-bqf'
-
-" opposite of 'J'
-Plug 'sgur/vim-textobj-parameter'
-Plug 'kana/vim-textobj-user'
-Plug 'AckslD/nvim-revJ.lua'
+" Plug 'kevinhwang91/nvim-bqf'
 
 " Inc/Dec numbers
 Plug 'monaqa/dial.nvim'

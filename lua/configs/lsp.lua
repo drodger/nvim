@@ -44,13 +44,13 @@ lspconfig.clangd.setup {
     root_dir = lspconfig.util.root_pattern('.git') or vim.loop.os_homedir(),
 }
 
-require("revj").setup{
+--[[ require("revj").setup{
     keymaps = {
         operator = '<Leader>J', -- for operator (+motion)
         line = '<Leader>j', -- for formatting current line
         visual = '<Leader>j', -- for formatting visual selection
     },
-}
+} ]]
 lspconfig.pyls.setup({
     root_dir = lspconfig.util.root_pattern('.git') or vim.loop.os_homedir(),
     -- filetype = { "python", "django" },
@@ -71,12 +71,12 @@ lspconfig.phpactor.setup({
     on_attach = default_on_attach,
 })
 -- lspconfig.gopls.setup(default_config)
-lspconfig.rust_analyzer.setup({
+--[[ lspconfig.rust_analyzer.setup({
     on_attach = default_on_attach,
 })
 lspconfig.solargraph.setup({
     on_attach = default_on_attach,
-})
+}) ]]
 
 lspconfig.sumneko_lua.setup({
     on_attach = default_on_attach,
@@ -226,10 +226,10 @@ require('surround').setup({
     on_attach = default_on_attach
 })
 
-require('bqf').setup({
+--[[ require('bqf').setup({
     on_attach = default_on_attach,
     mappings_style = "surround",
-})
+}) ]]
 
 require('colorizer').setup({
 
@@ -244,7 +244,7 @@ map('n', "<C-l>", "<CMD>lua require('Navigator').right()<CR>", opts)
 map('n', "<C-j>", "<CMD>lua require('Navigator').down()<CR>", opts)
 
 -- neoscroll
-require('neoscroll').setup({
+--[[ require('neoscroll').setup({
     on_attach = default_on_attach,
     mappings = {
         '<c-u>', '<C-d>', '<C-b>', '<C-f>',
@@ -254,4 +254,4 @@ require('neoscroll').setup({
     step_eof = true,
     respect_scrolloff = false,
     cursor_scrolls_alone = true,
-})
+}) ]]

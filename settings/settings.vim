@@ -14,6 +14,7 @@ set fillchars+=vert:│              " better looking window separator
 set synmaxcol=160                  " only syntax highlight first 160 characters of a line
 set wildignore+=*.pyc
 set mouse=a                         " enable mouse in neovim
+set hidden
 
 " because I always type it wrong:
 iab teh the

@@ -124,12 +124,16 @@ require'nvim-treesitter.configs'.setup({
     indent = {
         enable = true,
     },
+    incremental_selection = { enable = true },
+    textobjects = { enable = true },
     rainbow = {
         enable = true
     }
 })
 
-require'harpoon'.setup()
+require'harpoon'.setup({
+
+})
 
 require('lspkind').init({
     with_text = true,

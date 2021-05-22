@@ -35,8 +35,6 @@ Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'f-person/git-blame.nvim'
 " Show git change symbols in left gutter
 Plug 'lewis6991/gitsigns.nvim'
-" git commit browser
-Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'theprimeagen/vim-be-good'
 " View commit message for line of code
@@ -69,7 +67,7 @@ Plug 'blackcauldron7/surround.nvim'
 " Remove trailing whitespace
 Plug 'ntpeters/vim-better-whitespace'
 " pair parenthesis, etc
-Plug 'tmsvg/pear-tree'
+" Plug 'tmsvg/pear-tree'
 
 " Vimwiki filetype support
 Plug 'vimwiki/vimwiki'

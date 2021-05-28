@@ -22,13 +22,17 @@ let g:badwolf_tabline = 0
 let g:gruvbox_contrast_dark = "hard"
 
 set termguicolors
+let g:gruvbox_flat_style = "dark"
+let g:gruvbox_dark_sidebar = 1
 
 " colorscheme ayu
 " colorscheme badwolf
 " colorscheme dracula
 " colorscheme gruvbox
 " colorscheme panenight
-colorscheme vim-monokai-tasty
+" colorscheme vim-monokai-tasty
+" colorscheme gruvbox-flat
+colorscheme sonokai
 
 highlight SignColumn guibg=black
 highlight LineNr guibg=black

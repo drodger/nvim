@@ -18,6 +18,8 @@ Plug 'phanviet/vim-monokai-pro'
 Plug 'sainnhe/gruvbox-material'
 Plug 'tanvirtin/nvim-monokai'
 Plug 'tiagovla/tokyodark.nvim'
+Plug 'eddyekofo94/gruvbox-flat.nvim'
+Plug 'sainnhe/sonokai'
 
 " Show hex values with color as background
 " Plug 'gko/vim-coloresque'

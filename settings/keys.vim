@@ -7,6 +7,7 @@ nnoremap <leader>w :w<CR>
 tnoremap <ESC><ESC> <C-\><C-n>
 
 nnoremap <Esc> :nohlsearch<CR>
+nnoremap <F5> :lua package.loaded.configs = nil<cr>:source ~/.config/nvim/init.vim<cr>
 
 " Telescope
 nnoremap <leader>tf <cmd>lua require('configs.telescope').find_files()<CR>
@@ -15,7 +16,7 @@ nnoremap <leader>tc <cmd>lua require('configs.telescope').colors()<CR>
 nnoremap <leader>tb <cmd>Telescope file_browser<CR>
 nnoremap <leader>tg <cmd>Telescope live_grep<CR>
 " nnoremap <leader>tb <cmd>Telescope buffers<CR>
-nnoremap <leader>th <cmd>Telescope help_tags<CR>
+nnoremap <leader>th <cmd>lua require('configs.telescope').help_tags()<CR>
 nnoremap <leader>ts <cmd>Telescope grep_string<CR>
 nnoremap <leader>gf <cmd>Telescope git_files<CR>
 nnoremap <leader>gc <cmd>Telescope git_commits<CR>
@@ -108,10 +109,24 @@ nnoremap <leader>mj :lua require("harpoon.mark").set_current_at(1)<CR>
 nnoremap <leader>mk :lua require("harpoon.mark").set_current_at(2)<CR>
 nnoremap <leader>ml :lua require("harpoon.mark").set_current_at(3)<CR>
 nnoremap <leader>m; :lua require("harpoon.mark").set_current_at(4)<CR>
+nnoremap 1 :lua require("harpoon.ui").close_menu_and_nav_file(1)<CR>
+nnoremap 2 :lua require("harpoon.ui").close_menu_and_nav_file(2)<CR>
+nnoremap 3 :lua require("harpoon.ui").close_menu_and_nav_file(3)<CR>
+nnoremap 4 :lua require("harpoon.ui").close_menu_and_nav_file(4)<CR>
+nnoremap 5 :lua require("harpoon.ui").close_menu_and_nav_file(5)<CR>
+nnoremap 6 :lua require("harpoon.ui").close_menu_and_nav_file(6)<CR>
+nnoremap 7 :lua require("harpoon.ui").close_menu_and_nav_file(7)<CR>
+nnoremap 8 :lua require("harpoon.ui").close_menu_and_nav_file(8)<CR>
+nnoremap 9 :lua require("harpoon.ui").close_menu_and_nav_file(9)<CR>
 nnoremap <leader>h1 :lua require("harpoon.ui").nav_file(1)<CR>
 nnoremap <leader>h2 :lua require("harpoon.ui").nav_file(2)<CR>
 nnoremap <leader>h3 :lua require("harpoon.ui").nav_file(3)<CR>
 nnoremap <leader>h4 :lua require("harpoon.ui").nav_file(4)<CR>
+nnoremap <leader>h5 :lua require("harpoon.ui").nav_file(5)<CR>
+nnoremap <leader>h6 :lua require("harpoon.ui").nav_file(6)<CR>
+nnoremap <leader>h7 :lua require("harpoon.ui").nav_file(7)<CR>
+nnoremap <leader>h8 :lua require("harpoon.ui").nav_file(8)<CR>
+nnoremap <leader>h9 :lua require("harpoon.ui").nav_file(9)<CR>
 nnoremap <leader>hr1 :lua require("harpoon.mark").rm_file(1)<CR>
 nnoremap <leader>hr2 :lua require("harpoon.mark").rm_file(2)<CR>
 nnoremap <leader>hr3 :lua require("harpoon.mark").rm_file(3)<CR>

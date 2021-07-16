@@ -51,12 +51,12 @@ lspconfig.clangd.setup {
         visual = '<Leader>j', -- for formatting visual selection
     },
 } ]]
-lspconfig.pyls.setup({
+lspconfig.pylsp.setup({
     root_dir = lspconfig.util.root_pattern('.git') or vim.loop.os_homedir(),
     -- filetype = { "python", "django" },
     on_attach = default_on_attach,
     settings = {
-        pyls = {
+        pylsp = {
             plugins = {
                 pycodestyle = { enabled = false },
                 pyflakes = { enabled = false },
@@ -234,6 +234,12 @@ require('surround').setup({
     on_attach = default_on_attach,
     mappings_style = "surround",
 }) ]]
+require('lsp-colors').setup({
+    Error = "#db4b4b",
+    Warning = "#e0af68",
+    Information = "#0db9d7",
+    Hint = "#10B981"
+})
 
 require('colorizer').setup({
 

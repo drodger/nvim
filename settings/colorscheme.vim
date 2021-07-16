@@ -25,14 +25,19 @@ set termguicolors
 let g:gruvbox_flat_style = "dark"
 let g:gruvbox_dark_sidebar = 1
 
+" sonokai
+" let g:sonokai_style = 'atlantis'
+" let g:sonokai_enable_italic = 1
+" let g:sonokai_disable_italic_comment = 1
+
 " colorscheme ayu
 " colorscheme badwolf
 " colorscheme dracula
 " colorscheme gruvbox
 " colorscheme panenight
-" colorscheme vim-monokai-tasty
+colorscheme vim-monokai-tasty
 " colorscheme gruvbox-flat
-colorscheme sonokai
+" colorscheme sonokai
 
 highlight SignColumn guibg=black
 highlight LineNr guibg=black

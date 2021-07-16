@@ -19,11 +19,13 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'tanvirtin/nvim-monokai'
 Plug 'tiagovla/tokyodark.nvim'
 Plug 'eddyekofo94/gruvbox-flat.nvim'
-Plug 'sainnhe/sonokai'
+" Plug 'sainnhe/sonokai'
 
 " Show hex values with color as background
 " Plug 'gko/vim-coloresque'
 Plug 'norcalli/nvim-colorizer.lua'
+" Create missing LSP diagnostics highlight groups
+Plug 'folke/lsp-colors.nvim'
 
 " Fuzzy finder
 Plug 'nvim-lua/popup.nvim'
@@ -97,16 +99,12 @@ Plug 'honza/vim-snippets'
 Plug 'fhill2/telescope-ultisnips.nvim'
 
 " show indentation
-Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
+Plug 'lukas-reineke/indent-blankline.nvim'
 " different colors for bracket/parens/braces
 Plug 'p00f/nvim-ts-rainbow'
 
 Plug 'milkypostman/vim-togglelist'
 
-" fast scrolling
-" Plug 'karb94/neoscroll.nvim'
-" registers
-" Plug 'gennaro-tedesco/nvim-peekup'
 " quickfix window
 " Plug 'kevinhwang91/nvim-bqf'
 
@@ -116,7 +114,7 @@ Plug 'monaqa/dial.nvim'
 " spell check
 " Wait until this is fixed:
 " https://github.com/lewis6991/spellsitter.nvim/issues/2
-" Plug 'lewis6991/spellsitter.nvim'
+Plug 'lewis6991/spellsitter.nvim'
 
 call plug#end()
 

@@ -109,15 +109,15 @@ nnoremap <leader>mj :lua require("harpoon.mark").set_current_at(1)<CR>
 nnoremap <leader>mk :lua require("harpoon.mark").set_current_at(2)<CR>
 nnoremap <leader>ml :lua require("harpoon.mark").set_current_at(3)<CR>
 nnoremap <leader>m; :lua require("harpoon.mark").set_current_at(4)<CR>
-nnoremap 1 :lua require("harpoon.ui").close_menu_and_nav_file(1)<CR>
-nnoremap 2 :lua require("harpoon.ui").close_menu_and_nav_file(2)<CR>
-nnoremap 3 :lua require("harpoon.ui").close_menu_and_nav_file(3)<CR>
-nnoremap 4 :lua require("harpoon.ui").close_menu_and_nav_file(4)<CR>
-nnoremap 5 :lua require("harpoon.ui").close_menu_and_nav_file(5)<CR>
-nnoremap 6 :lua require("harpoon.ui").close_menu_and_nav_file(6)<CR>
-nnoremap 7 :lua require("harpoon.ui").close_menu_and_nav_file(7)<CR>
-nnoremap 8 :lua require("harpoon.ui").close_menu_and_nav_file(8)<CR>
-nnoremap 9 :lua require("harpoon.ui").close_menu_and_nav_file(9)<CR>
+" nnoremap <leader>1 :lua require("harpoon.ui").close_menu_and_nav_file(1)<CR>
+" nnoremap <leader>2 :lua require("harpoon.ui").close_menu_and_nav_file(2)<CR>
+" nnoremap <leader>3 :lua require("harpoon.ui").close_menu_and_nav_file(3)<CR>
+" nnoremap <leader>4 :lua require("harpoon.ui").close_menu_and_nav_file(4)<CR>
+" nnoremap <leader>5 :lua require("harpoon.ui").close_menu_and_nav_file(5)<CR>
+" nnoremap <leader>6 :lua require("harpoon.ui").close_menu_and_nav_file(6)<CR>
+" nnoremap <leader>7 :lua require("harpoon.ui").close_menu_and_nav_file(7)<CR>
+" nnoremap <leader>8 :lua require("harpoon.ui").close_menu_and_nav_file(8)<CR>
+" nnoremap <leader>9 :lua require("harpoon.ui").close_menu_and_nav_file(9)<CR>
 nnoremap <leader>h1 :lua require("harpoon.ui").nav_file(1)<CR>
 nnoremap <leader>h2 :lua require("harpoon.ui").nav_file(2)<CR>
 nnoremap <leader>h3 :lua require("harpoon.ui").nav_file(3)<CR>
